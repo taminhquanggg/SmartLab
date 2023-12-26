@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "595806154275",
+    "firebase_url": "https://smartlab-29v5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smartlab-29v5",
+    "storage_bucket": "smartlab-29v5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595806154275:android:142896b446ed89858bcb96",
+        "android_client_info": {
+          "package_name": "com.example.smartlab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZkUdVRAF8wV1qNDkryEdr3h7cQp9MnJg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

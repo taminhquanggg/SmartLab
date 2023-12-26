@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bottom_nav_home"
+        android:icon="@drawable/ico_home"
+        android:title="Trang chủ" />
+    <item
+        android:id="@+id/bottom_nav_calendar"
+        android:icon="@drawable/ico_calendar_nav"
+        android:title="Lịch hẹn" />
+    <item
+        android:id="@+id/bottom_nav_service"
+        android:icon="@drawable/ico_service"
+        android:title="Dịch vụ" />
+    <item
+        android:id="@+id/bottom_nav_medicine"
+        android:icon="@drawable/ico_medicine"
+        android:title="Mua thuốc" />
+    <item
+        android:id="@+id/bottom_nav_profile"
+        android:icon="@drawable/ico_user"
+        android:title="Tài khoản" />
+</menu>

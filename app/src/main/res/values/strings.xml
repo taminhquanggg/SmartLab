@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SmartLab</string>
+    <string name="welcome">Smart Lab chào bạn,</string>
+    <string name="who_are_u">Bạn là ai ?</string>
+    <string name="patient">Bệnh nhân</string>
+    <string name="doctor">Bác sĩ</string>
+    <string name="note_role">Bạn sẽ sử dụng ứng dụng với vai trò của mình. Hãy lựa chọn đúng vai trò !</string>
+    <string name="note_pass">Mật khẩu yêu cầu có 6 ký tự trở lên, có ít nhất một chữ và một số. KHÔNG nhập tiếng việt có dấu.</string>
+    <string name="note_info">Bổ sung thông tin cơ bản giúp chúng tôi phục vụ bạn tốt hơn!</string>
+    <string name="congrat">Chúc mừng bạn đã tạo tài khoản thành công, chúc bạn có một trải nghiệm tuyệt vời cùng SmartLab!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

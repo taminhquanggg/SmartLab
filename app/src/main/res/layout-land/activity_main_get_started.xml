@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B5EEFD"
+    tools:context=".bussinessView.businessActivity.MainGetStartedActivity">
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_imgHeader"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:background="@color/White"
+            app:cardBackgroundColor="#d0c6d1"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
+
+            <ImageView
+                android:id="@+id/pic_imgGetStarted"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txt_Hello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardView_imgHeader"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/font_family_mitr_light"
+            android:gravity="center"
+            android:text="SmartLab chào bạn"
+            android:textColor="@color/Black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/whoareu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_Hello"
+            android:fontFamily="@font/font_family_mitr_medium"
+            android:gravity="center"
+            android:text="Bạn là ai ?"
+            android:textColor="@color/Black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/liner_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/whoareu"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_Patient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/P_Blue"
+                    android:fontFamily="@font/font_family_mitr_medium"
+                    android:text="Bệnh nhân"
+                    android:textColor="@color/White"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_Doctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/P_Blue"
+                    android:fontFamily="@font/font_family_mitr_medium"
+                    android:text="Bác sĩ"
+                    android:textColor="@color/White"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/White"
+        app:cardCornerRadius="18dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/pic_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/logo_child" />
+
+            <TextView
+                android:id="@+id/txt_NOTE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pic_logo"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/font_family_mitr_light"
+                android:gravity="center"
+                android:text="@string/note_role"
+                android:textColor="@color/Black"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

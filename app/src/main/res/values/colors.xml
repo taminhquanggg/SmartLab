@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Black">#000000</color>
+    <color name="White">#FFFFFF</color>
+    <color name="P_Blue">#11B3CF</color>
+    <color name="P_Blue30">#B5EEFD</color>
+    <color name="Red">#CB003F</color>
+    <color name="BlueHover">#0B8AA0</color>
+    <color name="BackgroundBlueHover">#0B8AA0</color>
+</resources>
