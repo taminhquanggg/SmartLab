@@ -3,7 +3,12 @@
     <color name="Black">#000000</color>
     <color name="White">#FFFFFF</color>
     <color name="P_Blue">#11B3CF</color>
+    <color name="P_Blue5">#0D11B3CF</color>
     <color name="P_Blue30">#B5EEFD</color>
+    <color name="BlueLight10">#1A59D4E9</color>
+    <color name="Blue_Button">#E7F7FA</color>
+    <color name="RedLight">#F21F61</color>
+    <color name="RedLight5">#0DF21F61</color>
     <color name="Red">#CB003F</color>
     <color name="BlueHover">#0B8AA0</color>
     <color name="BackgroundBlueHover">#0B8AA0</color>

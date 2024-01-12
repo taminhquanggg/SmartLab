@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,50 +16,60 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartLab"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/my_app_api_key" />
+
         <activity
-            android:name=".bussinessView.businessActivity.PatientPharmacyActivity"
+            android:name=".businessView.businessActivity.PatientHospitalMapsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_patient_hospital_maps">
+
+
+        </activity>
+
+        <activity
+            android:name=".businessView.businessActivity.PatientLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".businessView.businessActivity.PatientPharmacyActivity"
             android:exported="false"
             android:screenOrientation="unspecified" />
         <activity
-            android:name=".bussinessView.businessActivity.PatientHomeActivity"
-            android:exported="false"
-            android:screenOrientation="unspecified">
-
-        </activity>
-        <activity
-            android:name=".bussinessView.businessActivity.PatientCongratulationsActivity"
+            android:name=".businessView.businessActivity.PatientHomeActivity"
             android:exported="false"
             android:screenOrientation="unspecified"></activity>
         <activity
-            android:name=".bussinessView.businessActivity.PatientUpdateInfoActivity"
-            android:exported="false"
-            android:screenOrientation="unspecified"></activity>
-        <activity
-            android:name=".bussinessView.businessActivity.PatientSetPasswordActivity"
-            android:exported="false"
-            android:screenOrientation="unspecified"></activity>
-        <activity
-            android:name=".bussinessView.businessActivity.PatientVerifyOTPActivity"
+            android:name=".businessView.businessActivity.PatientCongratulationsActivity"
             android:exported="false"
             android:screenOrientation="unspecified" />
         <activity
-            android:name=".bussinessView.businessActivity.PatientGetOTPActivity"
+            android:name=".businessView.businessActivity.PatientUpdateInfoActivity"
             android:exported="false"
-            android:screenOrientation="unspecified"></activity>
-
+            android:screenOrientation="unspecified" />
         <activity
-            android:name=".bussinessView.businessActivity.MainGetStartedActivity"
+            android:name=".businessView.businessActivity.PatientSetPasswordActivity"
             android:exported="false"
-            android:screenOrientation="unspecified">
-
-        </activity>
+            android:screenOrientation="unspecified" />
         <activity
-            android:name=".bussinessView.businessActivity.MainStartActivity"
+            android:name=".businessView.businessActivity.PatientVerifyOTPActivity"
+            android:exported="false"
+            android:screenOrientation="unspecified" />
+        <activity
+            android:name=".businessView.businessActivity.PatientGetOTPActivity"
+            android:exported="false"
+            android:screenOrientation="unspecified" />
+        <activity
+            android:name=".businessView.businessActivity.MainGetStartedActivity"
+            android:exported="false"
+            android:screenOrientation="unspecified" />
+        <activity
+            android:name=".businessView.businessActivity.MainStartActivity"
             android:exported="true"
             android:screenOrientation="unspecified">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -5,17 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/White"
-    tools:context=".bussinessView.businessActivity.PatientHomeActivity">
+    tools:context=".businessView.businessActivity.PatientHomeActivity">
 
     <FrameLayout
         android:id="@+id/frame_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="90dp"
         android:fillViewport="true"
         android:scrollbars="none"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,13 +28,14 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="10dp"
+        android:clipToOutline="true"
         android:background="@drawable/bg_bottom_nav"
         app:itemIconSize="30dp"
         app:itemIconTint="@drawable/selector_item_bottom_nav"
         app:itemTextColor="@color/White"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/menu_bottom_nav"
-        tools:layout_editor_absoluteX="10dp" />
-
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/menu_bottom_nav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

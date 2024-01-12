@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".bussinessView.businessActivity.PatientCongratulationsActivity"
-    android:background="@color/White">
+    android:background="@color/White"
+    tools:context=".businessView.businessActivity.PatientCongratulationsActivity">
 
     <RelativeLayout
         android:id="@+id/layout_main"
@@ -45,10 +45,10 @@
 
         <TextView
             android:id="@+id/txt_NOTE"
-            android:layout_marginHorizontal="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView_title"
+            android:layout_marginHorizontal="25dp"
             android:fontFamily="@font/mitr_light"
             android:gravity="center"
             android:text="@string/congrat"
@@ -57,6 +57,7 @@
     </RelativeLayout>
 
     <Button
+        android:id="@+id/button_startBeginner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"

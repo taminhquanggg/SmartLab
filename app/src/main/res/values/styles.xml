@@ -7,4 +7,7 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="avatar_style">
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/White"
-    tools:context=".bussinessView.businessActivity.PatientVerifyOTPActivity">
+    tools:context=".businessView.businessActivity.PatientVerifyOTPActivity">
 
     <RelativeLayout
         android:id="@+id/layout_main"
@@ -93,7 +93,8 @@
                     android:inputType="number"
                     android:maxLength="1"
                     android:textColor="@color/Black"
-                    android:textSize="32sp" />
+                    android:textSize="32sp"
+                    app:cursorColor="@color/P_Blue" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -115,7 +116,8 @@
                     android:inputType="number"
                     android:maxLength="1"
                     android:textColor="@color/Black"
-                    android:textSize="32sp" />
+                    android:textSize="32sp"
+                    app:cursorColor="@color/P_Blue" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -137,7 +139,8 @@
                     android:inputType="number"
                     android:maxLength="1"
                     android:textColor="@color/Black"
-                    android:textSize="32sp" />
+                    android:textSize="32sp"
+                    app:cursorColor="@color/P_Blue" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -159,7 +162,8 @@
                     android:inputType="number"
                     android:maxLength="1"
                     android:textColor="@color/Black"
-                    android:textSize="32sp" />
+                    android:textSize="32sp"
+                    app:cursorColor="@color/P_Blue" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -181,7 +185,8 @@
                     android:inputType="number"
                     android:maxLength="1"
                     android:textColor="@color/Black"
-                    android:textSize="32sp" />
+                    android:textSize="32sp"
+                    app:cursorColor="@color/P_Blue" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -203,7 +208,8 @@
                     android:inputType="number"
                     android:maxLength="1"
                     android:textColor="@color/Black"
-                    android:textSize="32sp" />
+                    android:textSize="32sp"
+                    app:cursorColor="@color/P_Blue" />
             </RelativeLayout>
 
         </LinearLayout>

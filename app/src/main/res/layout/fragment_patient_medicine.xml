@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/White"
-    tools:context=".bussinessView.businessFragment.PatientMedicineFragment">
+    tools:context=".businessView.businessFragment.PatientMedicineFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,6 +16,7 @@
             android:id="@+id/constraint_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:layout_marginBottom="10dp">
 
             <TextView
@@ -23,6 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/font_family_mitr_medium"
+                android:gravity="center"
                 android:paddingVertical="10dp"
                 android:text="Mua thuốc"
                 android:textColor="@color/BlueHover"
@@ -36,12 +38,13 @@
                 android:id="@+id/button_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
+                android:layout_gravity="center"
                 android:backgroundTint="@color/BlueHover"
                 android:contentDescription="Giỏ hàng"
                 android:elevation="0dp"
                 android:src="@drawable/ico_card"
                 app:elevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:tint="@null" />
