@@ -6,49 +6,58 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.example.smartlab.R;
+import com.example.smartlab.businessAdapter.MedicineAdapter;
+import com.example.smartlab.businessService.MedicineService;
+import com.example.smartlab.databinding.FragmentPatientMedicineBinding;
 
 public class PatientMedicineFragment extends Fragment {
 
-    Toolbar toolbar;
+    RecyclerView recyclerViewSanpham ;
+    RecyclerView recyclerViewSale ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_patient_medicine, container, false);
-    }
+        View view = inflater.inflate(R.layout.fragment_patient_medicine, container, false);
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        try {
+            recyclerViewSanpham = FragmentPatientMedicineBinding.bind(view).recyclerViewSanpham;
+            recyclerViewSanpham.setLayoutManager(new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false));
+            recyclerViewSale = FragmentPatientMedicineBinding.bind(view).recycleViewSale;
+            recyclerViewSale.setLayoutManager(new LinearLayoutManager(view.getContext() , LinearLayoutManager.HORIZONTAL, false));
+            MedicineService.getInstance().getMedicineList().addOnSuccessListener(medicines -> {
+                if (medicines.size() > 0) {
 
-        SearchView searchView = view.findViewById(R.id.seachView_searchMedicine);
+                    MedicineAdapter medicineAdapter = new MedicineAdapter(this, medicines);
+                    recyclerViewSanpham.setAdapter(medicineAdapter);
+                    MedicineAdapter medicineAdapter1 = new MedicineAdapter(this, medicines );
+                    recyclerViewSale.setAdapter(medicineAdapter1);
 
-        searchView.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
+                }
+            }).addOnFailureListener(e -> {
+                Log.e("ERROR", "PatientMedicineFragment| " + e.getMessage());
 
-        searchView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                searchView.setIconified(false);
-            }
-        });
+                Toast.makeText(view.getContext(), "ERROR: " + e.getMessage(), Toast.LENGTH_SHORT).show();
 
-//        toolbar = view.findViewById(R.id.toolBar_medicine);
-//
-//        AppCompatActivity activity = (AppCompatActivity) getActivity();
-//        activity.setSupportActionBar(toolbar);
-//
-//        activity.getSupportActionBar().setTitle("Hiệu thuốc");
-//        activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            });
+        }
+        catch (Exception e){
+            Toast.makeText(view.getContext(), "ERROR: " + e.getMessage(), Toast.LENGTH_SHORT).show();
 
-//        Log.d("Toolbar Title", (String) toolbar.getTitle());
+        }
+        return view;
     }
 }

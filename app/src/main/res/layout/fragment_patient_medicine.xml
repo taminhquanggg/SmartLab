@@ -158,29 +158,32 @@
                     android:textStyle="bold"
 
                     />
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    tools:listitem="@layout/item_medicine"
-                    android:layout_below="@+id/textView_itemTitle"
-                    android:id="@+id/recycler_view"
 
-                    />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_sanpham"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_itemTitle"
+                    android:layout_marginTop="-3dp"
+
+                    tools:listitem="@layout/item_medicine" />
+
                 <TextView
+                    android:id="@+id/textView_Sale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView_Sale"
+                    android:layout_below="@+id/recyclerView_sanpham"
                     android:fontFamily="@font/font_family_mitr_regular"
                     android:text="Sản phẩm giảm giá"
-                    android:textStyle="bold"
                     android:textSize="18sp"
-                    android:layout_below="@+id/recycler_view"
-                    />
+                    android:textStyle="bold" />
+
                 <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/textView_Sale"
-                    tools:listitem="@layout/item_medicine_sale"/>
+                    tools:listitem="@layout/item_medicine_sale"
+                    android:id="@+id/recycleView_Sale"/>
 
             </RelativeLayout>
 

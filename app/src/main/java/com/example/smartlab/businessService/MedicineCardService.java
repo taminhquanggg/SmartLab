@@ -1,8 +1,7 @@
 package com.example.smartlab.businessService;
 
-import com.example.smartlab.businessObject.Hospital;
 import com.example.smartlab.businessObject.Medicine;
-import com.example.smartlab.businessObject.Patient;
+import com.example.smartlab.businessObject.PatientCardMedicine;
 import com.example.smartlab.businessObject.ReferenceInfo;
 import com.example.smartlab.businessObject.ReferenceStatusEnum;
 import com.google.android.gms.tasks.Task;
@@ -13,53 +12,53 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class MedicineService {
+public class MedicineCardService {
     private final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Medicine");
-    private static MedicineService instance;
-    public MedicineService() {
+    private static MedicineCardService instance;
+    public MedicineCardService() {
 
     }
-    public static synchronized MedicineService getInstance() {
+    public static synchronized MedicineCardService getInstance() {
         if (instance == null) {
-            instance = new MedicineService();
+            instance = new MedicineCardService();
         }
         return instance;
     }
-    public Task<ArrayList<Medicine>> getMedicineList() {
+    public Task<ArrayList<PatientCardMedicine>> getMedicineCardList() {
 
-        ArrayList<Medicine> medicineList = new ArrayList<>();
+        ArrayList<PatientCardMedicine> medicineCardList = new ArrayList<>();
 
         return reference.get().continueWithTask(task -> {
             if (task.isSuccessful()) {
                 DataSnapshot snapshot = task.getResult();
                 if (snapshot.exists()) {
                     for (DataSnapshot childSnapshot : snapshot.getChildren()) {
-                        medicineList.add(childSnapshot.getValue(Medicine.class));
+                        medicineCardList.add(childSnapshot.getValue(PatientCardMedicine.class));
                     }
                 }
 
-                return Tasks.forResult(medicineList);
+                return Tasks.forResult(medicineCardList);
             }
             else {
                 return Tasks.forResult(null);
             }
         });
     }
-    public Task<ReferenceInfo<Medicine>> insert (Medicine infoInsert ){
-        infoInsert.setMedicineID(reference.push().getKey());
-        return  reference.child(infoInsert.getMedicineID()).setValue(infoInsert).continueWithTask(task -> {
+    public Task<ReferenceInfo<PatientCardMedicine>> insert (PatientCardMedicine infoInsert ){
+        infoInsert.setMedicineCardID(reference.push().getKey());
+        return  reference.child(infoInsert.getMedicineCardID()).setValue(infoInsert).continueWithTask(task -> {
             if (task.isSuccessful()){
                 return Tasks.forResult (new ReferenceInfo<>
-                (
-                        ReferenceStatusEnum.SUCCESS,
-                        infoInsert,
-                            null
+                        (
+                                ReferenceStatusEnum.SUCCESS,
+                                infoInsert,
+                                null
                         ));
             } else {
                 return Tasks.forResult(new ReferenceInfo<>
                         (
                                 ReferenceStatusEnum.ERROR,
-                                    null   ,
+                                null   ,
                                 task.getException().getMessage()
                         ));
             }
