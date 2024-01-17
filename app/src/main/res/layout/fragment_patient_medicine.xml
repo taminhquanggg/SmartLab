@@ -158,31 +158,29 @@
                     android:textStyle="bold"
 
                     />
-
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view"
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_below="@+id/textView_itemTitle"
                     tools:listitem="@layout/item_medicine"
+                    android:layout_below="@+id/textView_itemTitle"
+                    android:id="@+id/recycler_view"
 
                     />
-
                 <TextView
-                    android:id="@+id/textView_Sale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/recycler_view"
+                    android:id="@+id/textView_Sale"
                     android:fontFamily="@font/font_family_mitr_regular"
                     android:text="Sản phẩm giảm giá"
+                    android:textStyle="bold"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
-
+                    android:layout_below="@+id/recycler_view"
+                    />
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
                     android:layout_below="@+id/textView_Sale"
-                    tools:listitem="@layout/item_medicine_sale" />
+                    tools:listitem="@layout/item_medicine_sale"/>
 
             </RelativeLayout>
 
