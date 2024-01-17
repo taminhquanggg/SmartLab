@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E7F7FA"
+        >
+        <ImageView
+            android:id="@+id/img_TTD"
+            android:layout_width="105dp"
+            android:layout_height="137dp"
+            android:background="@drawable/avatar"
+            />
+        <TextView
+            android:id="@+id/text_trungTa_dang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trung tá Đăng"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:fontFamily="@font/font_family_mitr_regular"
+            />
+        <RelativeLayout
+            android:id="@+id/relative_info_TTD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_trungTa_dang"
+            android:gravity="center"
+            android:layout_toRightOf="@id/img_TTD"
+            android:layout_marginLeft="15dp"
+            >
+            <TextView
+                android:id="@+id/text_info_TTD_benhVien"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bệnh viện phổi"
+                android:textSize="14dp"
+                android:fontFamily="@font/font_family_mitr_light"
+                android:textColor="@color/BlueHover"
+                />
+            <TextView
+                android:id="@+id/text_info_TTD_khoa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Huyết học , sinh hóa"
+                android:textSize="14dp"
+                android:layout_below="@id/text_info_TTD_benhVien"
+                android:fontFamily="@font/font_family_mitr_light"
+                android:textColor="@color/BlueHover"
+                />
+            <TextView
+                android:id="@+id/text_info_TTD_luot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+900 lượt thăm khám"
+                android:textSize="14dp"
+                android:layout_below="@id/text_info_TTD_khoa"
+                android:fontFamily="@font/font_family_mitr_light"
+                android:textColor="@color/BlueHover"
+                />
+            <TextView
+                android:id="@+id/text_info_TTD_kinhNghiem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kinh nghiệm :"
+                android:textSize="14dp"
+                android:layout_below="@id/text_info_TTD_luot"
+                android:fontFamily="@font/font_family_mitr_light"
+                android:textColor="@color/BlueHover"
+                />
+            <TextView
+                android:id="@+id/text_info_TTD_1year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+1 năm"
+                android:textSize="14dp"
+                android:gravity="center"
+                android:layout_below="@id/text_info_TTD_luot"
+                android:fontFamily="@font/font_family_mitr_light"
+                android:textColor="#F21F61"
+                />
+        </RelativeLayout>
+        <Button
+            android:id="@+id/button_view_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_TTD"
+            android:drawableLeft="@drawable/icon_viewprofile"
+            android:text="Xem hồ sơ"
+            android:textColor="@color/White"
+            android:textSize="14dp"
+            android:fontFamily="@font/mitr_regular"
+            />
+
+        <Button
+            android:id="@+id/button_book_kham"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_TTD"
+            android:layout_marginStart="190dp"
+            android:drawableLeft="@drawable/ico_book_exa"
+            android:fontFamily="@font/mitr_regular"
+            android:text="Đặt lịch khám"
+            android:textColor="#F21F61"
+            android:textSize="14dp" />
+    </RelativeLayout>
+</RelativeLayout>

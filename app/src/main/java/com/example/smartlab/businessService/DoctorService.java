@@ -58,4 +58,28 @@ public class DoctorService {
             }
         });
     }
+    public Task<ReferenceInfo<Doctor>> Insert(Doctor infoInsert) {
+
+        infoInsert.setDoctorID(reference.push().getKey());
+
+        return reference.child(infoInsert.getDoctorID()).setValue(infoInsert)
+                .continueWithTask(task -> {
+                    if (task.isSuccessful()) {
+                        return Tasks.forResult(new ReferenceInfo<>
+                                (
+                                        ReferenceStatusEnum.SUCCESS,
+                                        infoInsert,
+                                        null
+                                ));
+                    } else {
+                        return Tasks.forResult(new ReferenceInfo<>
+                                (
+                                        ReferenceStatusEnum.ERROR,
+                                        null,
+                                        task.getException().getMessage()
+                                ));
+                    }
+                });
+    }
 }
+
