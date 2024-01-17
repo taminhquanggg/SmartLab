@@ -8,6 +8,10 @@
     <string name="note_pass">Mật khẩu yêu cầu có 6 ký tự trở lên, có ít nhất một chữ và một số. KHÔNG nhập tiếng việt có dấu.</string>
     <string name="note_info">Bổ sung thông tin cơ bản giúp chúng tôi phục vụ bạn tốt hơn!</string>
     <string name="congrat">Chúc mừng bạn đã tạo tài khoản thành công, chúc bạn có một trải nghiệm tuyệt vời cùng SmartLab!</string>
+    <string name="congratBooking">Chúc mừng bạn đã đặt lịch hẹn thành công.
+        Thông tin của bạn đã được lưu vào QRCode,
+        bạn có thể lưu nó lại và cung cấp QRCode cho kỹ thuật viên khi bạn đến cơ sở khám bệnh theo lịch đã đặt!</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_patient_hospital_maps">PatientHospitalMapsActivity</string>

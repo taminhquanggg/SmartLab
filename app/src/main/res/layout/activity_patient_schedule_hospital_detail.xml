@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/White"
     android:padding="10dp"
-    tools:context=".businessView.businessActivity.PatientBookHospitalActivity">
+    tools:context=".businessView.businessActivity.PatientScheduleHospitalDetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_head"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/font_family_mitr_regular"
             android:gravity="center"
-            android:text="Đặt lịch"
+            android:text="Chi tiết lịch hẹn"
             android:textColor="@color/Black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -126,7 +126,8 @@
         app:layout_constraintTop_toBottomOf="@+id/card_hospital">
 
         <TextView
-            android:id="@+id/txt_reason"
+            android:id="@+id/txt_latitute"
+            android:visibility="invisible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/font_family_mitr_regular"
@@ -137,19 +138,60 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_reason"
+        <TextView
+            android:id="@+id/txt_longitude"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_family_mitr_regular"
+            android:text="Lý do khám: "
+            android:textColor="@color/BlueHover"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_hotline"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_family_mitr_regular"
+            android:text="Lý do khám: "
+            android:textColor="@color/BlueHover"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <TextView
+            android:id="@+id/txt_reasonTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_family_mitr_regular"
+            android:text="Lý do khám: "
+            android:textColor="@color/BlueHover"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+        <TextView
+            android:id="@+id/txt_reason"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/BackgroundBlueHover"
-            android:fontFamily="@font/mitr_light"
-            android:hint="Nhập lý do khám"
+            android:fontFamily="@font/font_family_mitr_regular"
+            android:text="Lý do khám Lý do khám"
+            android:textColor="@color/BlueHover"
             android:textSize="16sp"
-            android:textColor="@color/Black"
-            android:textColorHint="#555555"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txt_reason"
+            app:layout_constraintStart_toEndOf="@+id/txt_reasonTitle"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -165,32 +207,28 @@
         app:layout_constraintTop_toBottomOf="@+id/layout_reason">
 
         <TextView
-            android:id="@+id/txt_chooseDay"
+            android:id="@+id/txt_chooseDayTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/font_family_mitr_regular"
-            android:text="Chọn ngày: "
+            android:text="Ngày hẹn: "
             android:textColor="@color/BlueHover"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button_chooseDay"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/txt_chooseDay"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/txt_chooseDay"
-            android:backgroundTint="@color/White"
-            android:drawableRight="@drawable/ico_down"
-            android:fontFamily="@font/font_family_mitr_light"
-            android:text="Thứ 2, 24, Tháng 01, 2024"
-            android:textAllCaps="false"
-            android:textColor="@color/Black"
-            android:textSize="14sp"
+            android:fontFamily="@font/font_family_mitr_regular"
+            android:text="Ngày hẹn: "
+            android:textColor="@color/BlueHover"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txt_chooseDay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_chooseDayTitle"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -199,37 +237,34 @@
         android:id="@+id/layout_chooseHour"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_chooseDate">
 
         <TextView
-            android:id="@+id/txt_chooseHour"
+            android:id="@+id/txt_chooseHourTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/font_family_mitr_regular"
-            android:text="Chọn giờ: "
+            android:text="Giờ hẹn: "
             android:textColor="@color/BlueHover"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button_chooseHour"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/txt_chooseHour"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/txt_chooseHour"
-            android:backgroundTint="@color/White"
-            android:drawableRight="@drawable/ico_down"
-            android:fontFamily="@font/font_family_mitr_light"
-            android:text="20:30"
-            android:textAllCaps="false"
-            android:textColor="@color/Black"
-            android:textSize="14sp"
+            android:fontFamily="@font/font_family_mitr_regular"
+            android:text="Giờ hẹn: "
+            android:textColor="@color/BlueHover"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txt_chooseHour"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_chooseHourTitle"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -238,20 +273,47 @@
         android:id="@+id/image_qrCode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/layout_chooseHour"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/layout_chooseHour" />
 
-    <Button
-        android:id="@+id/button_book"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/font_family_mitr_regular"
-        android:text="Gửi lịch hẹn"
-        android:textColor="@color/White"
-        android:textSize="16sp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button_directMap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/font_family_mitr_regular"
+            android:text="Chỉ đường"
+            android:textColor="@color/White"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button_callHotline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/font_family_mitr_regular"
+            android:text="Liên hệ"
+            android:textColor="@color/White"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

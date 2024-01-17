@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class HospitalService {
     private final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Hospital");
     private static HospitalService instance;
+
     public HospitalService() {
 
     }
@@ -37,11 +38,26 @@ public class HospitalService {
                 }
 
                 return Tasks.forResult(hospitalList);
-            }
-            else {
+            } else {
                 return Tasks.forResult(null);
             }
         });
+    }
+
+    public Task<Hospital> getHospitalInfo(String hospitalID) {
+        return reference.orderByChild("hospitalID").equalTo(hospitalID)
+                .get().continueWithTask(task -> {
+                    if (task.isSuccessful()) {
+                        DataSnapshot snapshot = task.getResult();
+
+                        if (snapshot.exists()) {
+                            for (DataSnapshot childSnapshot : snapshot.getChildren()) {
+                                return Tasks.forResult(childSnapshot.getValue(Hospital.class));
+                            }
+                        }
+                    }
+                    return null;
+                });
     }
 
 }

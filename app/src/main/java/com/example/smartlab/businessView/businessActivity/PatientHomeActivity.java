@@ -6,11 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.smartlab.businessObject.Patient;
-import com.example.smartlab.businessView.businessFragment.PatientCalendarFragment;
+import com.example.smartlab.businessView.businessFragment.PatientScheduleFragment;
 import com.example.smartlab.businessView.businessFragment.PatientHomeFragment;
 import com.example.smartlab.businessView.businessFragment.PatientMedicineFragment;
 import com.example.smartlab.businessView.businessFragment.PatientProfileFragment;
@@ -23,7 +22,7 @@ public class PatientHomeActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNav;
     PatientHomeFragment homeFragment = new PatientHomeFragment();
-    PatientCalendarFragment calendarFragment = new PatientCalendarFragment();
+    PatientScheduleFragment scheduleFragment = new PatientScheduleFragment();
     PatientServiceFragment serviceFragment = new PatientServiceFragment();
     PatientMedicineFragment medicineFragment = new PatientMedicineFragment();
     PatientProfileFragment profileFragment = new PatientProfileFragment();
@@ -69,10 +68,12 @@ public class PatientHomeActivity extends AppCompatActivity {
 
                     return true;
                 } else if (id == R.id.bottom_nav_calendar) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, calendarFragment).commit();
-                    return true;
-                } else if (id == R.id.bottom_nav_service) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, serviceFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, scheduleFragment).commit();
+
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("patientInfo", patientIntent);
+                    scheduleFragment.setArguments(bundle);
+
                     return true;
                 } else if (id == R.id.bottom_nav_medicine) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, medicineFragment).commit();

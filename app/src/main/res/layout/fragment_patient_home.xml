@@ -70,6 +70,7 @@
                                 android:id="@+id/txt_statusPatient"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:visibility="invisible"
                                 android:layout_below="@+id/txt_patientName"
                                 android:fontFamily="@font/font_family_mitr_light"
                                 android:text="Bạn không có cuộc hẹn"
@@ -86,6 +87,7 @@
                     android:id="@+id/button_search"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:backgroundTint="@color/P_Blue5"
                     android:contentDescription="Tìm kiếm"
                     android:elevation="0dp"
@@ -103,6 +105,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/P_Blue5"
+                    android:visibility="invisible"
                     android:contentDescription="Thông báo"
                     android:elevation="0dp"
                     android:src="@drawable/ico_bell"
@@ -233,7 +236,7 @@
                         android:layout_weight="1">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/layout_itemResult"
+                            android:id="@+id/layout_itemOrderDoctor"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -243,24 +246,24 @@
                             android:paddingBottom="40dp">
 
                             <TextView
-                                android:id="@+id/textView_titlePatientResult"
+                                android:id="@+id/textView_titleOrderDoctor"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:fontFamily="@font/font_family_mitr_regular"
                                 android:gravity="center|left"
-                                android:text="Kết quả \nkhám bệnh"
+                                android:text="Đặt hẹn với bác sĩ"
                                 android:textColor="@color/Black"
                                 android:textSize="16sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/image_patient_result"
+                                app:layout_constraintEnd_toStartOf="@+id/image_order_doctor"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <ImageView
-                                android:id="@+id/image_patient_result"
+                                android:id="@+id/image_order_doctor"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/ico_patient_result"
+                                android:background="@drawable/ico_order_doctor"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -379,179 +382,12 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_buttonChoose2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/constraint_buttonChoose1"
-                android:layout_marginTop="10dp">
-
-                <LinearLayout
-                    android:id="@+id/layout_buttonChoose2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:weightSum="2"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="5dp"
-                        android:layout_weight="1">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/layout_itemOrderDoctor"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_stroke_cardview"
-                            android:paddingHorizontal="15dp"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="40dp">
-
-                            <TextView
-                                android:id="@+id/textView_titleOrderDoctor"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:fontFamily="@font/font_family_mitr_regular"
-                                android:gravity="center|left"
-                                android:text="Đặt hẹn với bác sĩ"
-                                android:textColor="@color/Black"
-                                android:textSize="16sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/image_order_doctor"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <ImageView
-                                android:id="@+id/image_order_doctor"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/ico_order_doctor"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/layout_itemService"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_stroke_cardview"
-                            android:paddingHorizontal="15dp"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="40dp">
-
-                            <TextView
-                                android:id="@+id/textView_titleService"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:fontFamily="@font/font_family_mitr_regular"
-                                android:gravity="center|left"
-                                android:text="Gói dịch vụ khám bệnh"
-                                android:textColor="@color/Black"
-                                android:textSize="16sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/image_service_group"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <ImageView
-                                android:id="@+id/image_service_group"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/ico_service_group"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <View
-                    android:id="@+id/view_buttonChoose2"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    app:layout_constraintLeft_toLeftOf="@+id/layout_buttonChoose2"
-                    app:layout_constraintStart_toStartOf="@+id/layout_buttonChoose2"
-                    app:layout_constraintTop_toBottomOf="@+id/layout_buttonChoose2" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2"
-                    app:layout_constraintBottom_toBottomOf="@+id/view_buttonChoose2"
-                    app:layout_constraintEnd_toEndOf="@+id/view_buttonChoose2"
-                    app:layout_constraintStart_toStartOf="@+id/view_buttonChoose2"
-                    app:layout_constraintTop_toTopOf="@+id/view_buttonChoose2">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginEnd="5dp"
-                        android:layout_weight="1"
-                        android:gravity="center">
-
-                        <Button
-                            android:id="@+id/button_orderDoctor"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="@color/Blue_Button"
-                            android:drawableEnd="@drawable/ico_to_right"
-                            android:fontFamily="@font/font_family_mitr_regular"
-                            android:text="Đặt hẹn ngay"
-                            android:textColor="@color/BlueHover"
-                            android:textSize="12sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1"
-                        android:gravity="center">
-
-                        <Button
-                            android:id="@+id/button_viewService"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="@color/Blue_Button"
-                            android:drawableEnd="@drawable/ico_to_right"
-                            android:fontFamily="@font/font_family_mitr_regular"
-                            android:text="Xem ngay"
-                            android:textColor="@color/BlueHover"
-                            android:textSize="12sp" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/title_listDoctor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/constraint_buttonChoose2"
+                android:layout_below="@+id/constraint_buttonChoose1"
                 android:layout_marginTop="18dp"
                 android:orientation="horizontal">
 
@@ -589,166 +425,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/title_listDoctor"
                 tools:listitem="@layout/item_doctor_fragment_patient_home" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/title_listService"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/rv_listDoctorPatientHome"
-                android:layout_marginTop="18dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start|center_vertical"
-                    android:fontFamily="@font/font_family_mitr_regular"
-                    android:text="Dịch vụ nổi bật"
-                    android:textColor="@color/BlueHover"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/White"
-                    android:fontFamily="@font/font_family_mitr_light"
-                    android:text="Xem thêm"
-                    android:textAllCaps="false"
-                    android:textColor="@color/BlueHover"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!--            <HorizontalScrollView-->
-            <!--                android:id="@+id/scroll_serviceTrending"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_below="@+id/title_listService">-->
-
-            <!--                <LinearLayout-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:orientation="horizontal">-->
-
-            <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
-            <!--                        android:layout_width="wrap_content"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:layout_marginEnd="10dp">-->
-
-            <!--                        <androidx.cardview.widget.CardView-->
-            <!--                            android:id="@+id/cardView_Service"-->
-            <!--                            android:layout_width="wrap_content"-->
-            <!--                            android:layout_height="wrap_content"-->
-            <!--                            android:elevation="0dp"-->
-            <!--                            app:cardBackgroundColor="@color/BlueLight10"-->
-            <!--                            app:cardCornerRadius="18dp"-->
-            <!--                            app:cardElevation="0dp"-->
-            <!--                            app:layout_constraintLeft_toLeftOf="parent"-->
-            <!--                            app:layout_constraintRight_toRightOf="parent"-->
-            <!--                            app:layout_constraintTop_toTopOf="parent">-->
-
-            <!--                            <androidx.constraintlayout.widget.ConstraintLayout-->
-            <!--                                android:layout_width="wrap_content"-->
-            <!--                                android:layout_height="wrap_content"-->
-            <!--                                android:layout_marginHorizontal="10dp"-->
-            <!--                                android:layout_marginTop="10dp"-->
-            <!--                                android:layout_marginBottom="30dp">-->
-
-            <!--                                <com.google.android.material.imageview.ShapeableImageView-->
-            <!--                                    android:id="@+id/image_avatarService"-->
-            <!--                                    android:layout_width="54dp"-->
-            <!--                                    android:layout_height="54dp"-->
-            <!--                                    android:layout_gravity="center"-->
-            <!--                                    android:padding="5dp"-->
-            <!--                                    app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                                    app:layout_constraintStart_toStartOf="parent"-->
-            <!--                                    app:layout_constraintTop_toTopOf="parent"-->
-            <!--                                    app:shapeAppearanceOverlay="@style/avatar_style"-->
-            <!--                                    app:srcCompat="@drawable/avatar"-->
-            <!--                                    app:strokeColor="@color/P_Blue"-->
-            <!--                                    app:strokeWidth="5dp" />-->
-
-
-            <!--                                <TextView-->
-            <!--                                    android:id="@+id/txt_ServiceName"-->
-            <!--                                    android:layout_width="wrap_content"-->
-            <!--                                    android:layout_height="wrap_content"-->
-            <!--                                    android:fontFamily="@font/font_family_mitr_regular"-->
-            <!--                                    android:text="Hoàng Đức Thắng"-->
-            <!--                                    android:textColor="@color/Black"-->
-            <!--                                    android:textSize="10sp"-->
-            <!--                                    app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                                    app:layout_constraintStart_toStartOf="parent"-->
-            <!--                                    app:layout_constraintTop_toBottomOf="@+id/image_avatarService" />-->
-
-            <!--                                <TextView-->
-            <!--                                    android:id="@+id/txt_hospitalService"-->
-            <!--                                    android:layout_width="wrap_content"-->
-            <!--                                    android:layout_height="wrap_content"-->
-            <!--                                    android:layout_marginTop="5dp"-->
-            <!--                                    android:fontFamily="@font/font_family_mitr_light"-->
-            <!--                                    android:text="Phòng khám đa khoa La Mai"-->
-            <!--                                    android:textColor="@color/BlueHover"-->
-            <!--                                    android:textSize="8sp"-->
-            <!--                                    app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                                    app:layout_constraintStart_toStartOf="parent"-->
-            <!--                                    app:layout_constraintTop_toBottomOf="@+id/txt_ServiceName" />-->
-
-            <!--                                <TextView-->
-            <!--                                    android:id="@+id/txt_departmentServicew"-->
-            <!--                                    android:layout_width="wrap_content"-->
-            <!--                                    android:layout_height="wrap_content"-->
-            <!--                                    android:layout_marginTop="5dp"-->
-            <!--                                    android:fontFamily="@font/font_family_mitr_light"-->
-            <!--                                    android:text="Chuyên khoa: Răng Hàm Mặt"-->
-            <!--                                    android:textColor="@color/BlueHover"-->
-            <!--                                    android:textSize="8sp"-->
-            <!--                                    app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                                    app:layout_constraintStart_toStartOf="parent"-->
-            <!--                                    app:layout_constraintTop_toBottomOf="@+id/txt_hospitalService" />-->
-
-
-            <!--                            </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-
-            <!--                        </androidx.cardview.widget.CardView>-->
-
-            <!--                        <View-->
-            <!--                            android:id="@id/view_serviceTrending"-->
-            <!--                            android:layout_width="0dp"-->
-            <!--                            android:layout_height="0dp"-->
-            <!--                            app:layout_constraintEnd_toEndOf="@+id/cardView_Service"-->
-            <!--                            app:layout_constraintStart_toStartOf="@+id/cardView_Service"-->
-            <!--                            app:layout_constraintTop_toBottomOf="@+id/cardView_Service" />-->
-
-            <!--                        <Button-->
-            <!--                            android:id="@+id/button_orderServiceTrending"-->
-            <!--                            android:layout_width="0dp"-->
-            <!--                            android:layout_height="wrap_content"-->
-            <!--                            android:backgroundTint="@color/White"-->
-            <!--                            android:fontFamily="@font/font_family_mitr_regular"-->
-            <!--                            android:text="Đặt hẹn ngay"-->
-            <!--                            android:textColor="#0B8AA0"-->
-            <!--                            android:textSize="10sp"-->
-            <!--                            app:layout_constraintBottom_toBottomOf="@+id/view_serviceTrending"-->
-            <!--                            app:layout_constraintEnd_toEndOf="@+id/view_serviceTrending"-->
-            <!--                            app:layout_constraintStart_toStartOf="@+id/view_serviceTrending"-->
-            <!--                            app:layout_constraintTop_toTopOf="@+id/view_serviceTrending"-->
-            <!--                            app:strokeColor="@color/BlueHover"-->
-            <!--                            app:strokeWidth="0.5dp" />-->
-
-            <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-            <!--                </LinearLayout>-->
-
-            <!--            </HorizontalScrollView>-->
 
 
         </RelativeLayout>

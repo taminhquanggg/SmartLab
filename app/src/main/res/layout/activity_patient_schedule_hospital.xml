@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    android:padding="10dp"
+    tools:context=".businessView.businessActivity.PatientScheduleHospitalActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/BlueHover"
+            android:contentDescription="Quay lại"
+            android:elevation="0dp"
+            android:src="@drawable/ico_back"
+            app:elevation="0dp"
+            app:fabCustomSize="35dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/avatar_style"
+            app:tint="@null" />
+
+        <TextView
+            android:id="@+id/txt_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_family_mitr_regular"
+            android:gravity="center"
+            android:text="Lịch hẹn với bệnh viện"
+            android:textColor="@color/Black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view_head"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/BlueLight10"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_head"
+        app:layout_constraintEnd_toEndOf="@+id/layout_head"
+        app:layout_constraintStart_toStartOf="@+id/layout_head"
+        app:layout_constraintTop_toBottomOf="@+id/layout_head" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_listSchedule"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_head"
+            tools:listitem="@layout/item_schedule_hospital" />
+
+    <TextView
+        android:id="@+id/txt_none"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:text="Bạn không có lịch hẹn nào"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_head" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

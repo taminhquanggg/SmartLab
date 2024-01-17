@@ -17,6 +17,15 @@
         android:theme="@style/Theme.SmartLab"
         tools:targetApi="31">
         <activity
+            android:name=".businessView.businessActivity.PatientScheduleHospitalDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".businessView.businessActivity.PatientScheduleHospitalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".businessView.businessActivity.PatientBookingSuccessActivity"
+            android:exported="false" />
+        <activity
             android:name=".businessView.businessActivity.PatientBookDoctorActivity"
             android:exported="false" />
 
@@ -28,7 +37,7 @@
             android:name=".businessView.businessActivity.PatientHospitalMapsActivity"
             android:exported="false"
             android:label="@string/title_activity_patient_hospital_maps"
-            android:screenOrientation="unspecified"></activity>
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".businessView.businessActivity.PatientLoginActivity"
             android:exported="false" />
@@ -64,12 +73,10 @@
             android:name=".businessView.businessActivity.MainGetStartedActivity"
             android:exported="false"
             android:screenOrientation="unspecified" />
-
         <activity
             android:name=".businessView.businessActivity.PatientBookHospitalActivity"
             android:exported="false"
-            android:screenOrientation="unspecified"></activity>
-
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".businessView.businessActivity.MainStartActivity"
             android:exported="true"

@@ -25,7 +25,6 @@ public class MainGetStartedActivity extends AppCompatActivity {
         btnPatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainGetStartedActivity.this, PatientGetOTPActivity.class));
             }
         });
     }

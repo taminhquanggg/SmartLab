@@ -50,10 +50,6 @@ public class PatientHospitalMapsActivity extends AppCompatActivity implements Go
     private ArrayList<Hospital> hospitalArrayList;
     private Patient patientIntent;
 
-    public Patient getPatientIntent() {
-        return patientIntent;
-    }
-
     public void setVisibleHospitalMap(int status) {
         binding.rvListHospitalMap.setVisibility(status);
     }

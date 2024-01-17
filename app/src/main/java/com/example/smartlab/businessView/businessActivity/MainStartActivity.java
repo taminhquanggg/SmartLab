@@ -55,8 +55,7 @@ public class MainStartActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainStartActivity.this, MainGetStartedActivity.class);
-                startActivities(new Intent[]{intent});
+                startActivity(new Intent(MainStartActivity.this, PatientGetOTPActivity.class));
                 finish();
             }
         }, 3000);

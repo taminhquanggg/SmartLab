@@ -64,6 +64,9 @@ dependencies {
     implementation("at.favre.lib:bcrypt:0.10.2")
     implementation("com.google.android.material:material:1.11.0")
     implementation("io.github.ShawnLin013:number-picker:2.4.13")
+    implementation("com.google.zxing:core:3.4.1")
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.github.androidmads:QRGenerator:1.0.1")
 
     // Import the Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
