@@ -7,6 +7,8 @@ public class Hospital implements Serializable {
     private String hospitalName;
     private String address;
     private String hotline;
+    private Double latitude;
+    private Double longitude;
 
     public Hospital() {
 
@@ -14,20 +16,6 @@ public class Hospital implements Serializable {
 
     public Hospital(Serializable hospital) {
 
-    }
-
-    public Hospital(Hospital hospital) {
-        this.hospitalID = hospital.getHospitalID();
-        this.hospitalName = hospital.getHospitalName();
-        this.address = hospital.getAddress();
-        this.hotline = hospital.getHotline();
-    }
-
-    public Hospital(String hospitalID, String hospitalName, String address, String hotline) {
-        this.hospitalID = hospitalID;
-        this.hospitalName = hospitalName;
-        this.address = address;
-        this.hotline = hotline;
     }
 
     public String getHospitalID() {
@@ -60,5 +48,21 @@ public class Hospital implements Serializable {
 
     public void setHotline(String hotline) {
         this.hotline = hotline;
+    }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 }

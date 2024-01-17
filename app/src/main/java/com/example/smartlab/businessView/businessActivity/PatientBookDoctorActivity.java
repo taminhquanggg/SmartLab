@@ -1,10 +1,12 @@
-package com.example.smartlab;
+package com.example.smartlab.businessView.businessActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class patient_book_doctor extends AppCompatActivity {
+import com.example.smartlab.R;
+
+public class PatientBookDoctorActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -10,4 +10,8 @@
     <style name="avatar_style">
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="image_hospital_style">
+        <item name="cornerSize">20%</item>
+    </style>
 </resources>

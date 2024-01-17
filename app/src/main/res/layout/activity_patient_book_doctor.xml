@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".patient_book_doctor">
+    tools:context=".businessView.businessActivity.PatientBookDoctorActivity">
     <RelativeLayout
         android:id="@+id/relative_search_doctor"
         android:layout_width="match_parent"

@@ -12,45 +12,33 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smartlab.R;
 import com.example.smartlab.businessObject.Doctor;
-import com.example.smartlab.businessService.DoctorService;
 import com.example.smartlab.businessView.businessFragment.PatientHomeFragment;
 import com.example.smartlab.databinding.ItemDoctorFragmentPatientHomeBinding;
-import com.google.android.material.imageview.ShapeableImageView;
 
 import java.util.ArrayList;
 
-public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.DoctorViewHolder> {
+public class DoctorHomeAdapter extends RecyclerView.Adapter<DoctorHomeAdapter.DoctorHomeViewHolder> {
 
     private final PatientHomeFragment mainFragment;
     private final ArrayList<Doctor> collection;
 
-    public DoctorAdapter(PatientHomeFragment mainFragment, ArrayList<Doctor> collection) {
+    public DoctorHomeAdapter(PatientHomeFragment mainFragment, ArrayList<Doctor> collection) {
         this.mainFragment = mainFragment;
         this.collection = collection;
     }
 
-    public static class DoctorViewHolder extends RecyclerView.ViewHolder {
-
-        private final ItemDoctorFragmentPatientHomeBinding binding;
-
-        public DoctorViewHolder(@NonNull View itemView) {
-            super(itemView);
-            binding = ItemDoctorFragmentPatientHomeBinding.bind(itemView);
-        }
-    }
-
     @NonNull
     @Override
-    public DoctorViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DoctorHomeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_doctor_fragment_patient_home, parent, false);
 
-        return new DoctorViewHolder(view);
+        return new DoctorHomeViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DoctorViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DoctorHomeViewHolder holder, int position) {
         Doctor item = collection.get(position);
 
         holder.binding.txtDoctorName.setText(item.getDoctorName());
@@ -74,5 +62,13 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.DoctorView
         return collection.size();
     }
 
+    public static class DoctorHomeViewHolder extends RecyclerView.ViewHolder {
+        private final ItemDoctorFragmentPatientHomeBinding binding;
+
+        public DoctorHomeViewHolder(@NonNull View itemView) {
+            super(itemView);
+            binding = ItemDoctorFragmentPatientHomeBinding.bind(itemView);
+        }
+    }
 
 }

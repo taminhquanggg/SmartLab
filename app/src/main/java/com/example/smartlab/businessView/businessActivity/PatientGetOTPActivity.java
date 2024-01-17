@@ -44,7 +44,7 @@ public class PatientGetOTPActivity extends AppCompatActivity {
             InitVariable();
             setEventListener();
         } catch (Exception ex) {
-            Log.e("LOG DEBUG PatientGetOTPActivity| ", ex.getMessage());
+            Log.e("ERROR", "PatientGetOTPActivity|" + ex.getMessage());
             Toast.makeText(PatientGetOTPActivity.this, "ERROR: " + ex.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
@@ -121,12 +121,12 @@ public class PatientGetOTPActivity extends AppCompatActivity {
                                     handleOnGetOTP();
                                 }
                             } else if (patientReferenceInfo.getStatus() == ReferenceStatusEnum.ERROR) {
-                                Log.e("LOG DEBUG PatientGetOTPActivity| ", patientReferenceInfo.getMessage());
+                                Log.e("ERROR", "PatientGetOTPActivity|" + patientReferenceInfo.getMessage());
                                 Toast.makeText(PatientGetOTPActivity.this, "ERROR: " + patientReferenceInfo.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                 ).addOnFailureListener(e -> {
-                    Log.e("LOG DEBUG PatientGetOTPActivity| ", e.getMessage());
+                    Log.e("ERROR", "PatientGetOTPActivity|" + e.getMessage());
                     Toast.makeText(PatientGetOTPActivity.this, "ERROR: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
@@ -148,7 +148,7 @@ public class PatientGetOTPActivity extends AppCompatActivity {
                             public void onVerificationFailed(@NonNull FirebaseException e) {
                                 inputPhoneNumber.setError(e.getMessage());
                                 Toast.makeText(PatientGetOTPActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                                Log.e("LOG DEBUG PhoneAuthOptions|", "FirebaseException:" + e.getMessage());
+                                Log.e("ERROR", "PhoneAuthOptions|FirebaseException:" + e.getMessage());
                                 InProgress(false);
                             }
 

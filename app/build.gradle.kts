@@ -63,7 +63,7 @@ dependencies {
     implementation("com.hbb20:ccp:2.5.0")
     implementation("at.favre.lib:bcrypt:0.10.2")
     implementation("com.google.android.material:material:1.11.0")
-
+    implementation("io.github.ShawnLin013:number-picker:2.4.13")
 
     // Import the Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))

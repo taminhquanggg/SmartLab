@@ -34,7 +34,7 @@ public class PatientSetPasswordActivity extends AppCompatActivity {
             InitVariable();
             setEventListener();
         } catch (Exception ex) {
-            Log.e("LOG DEBUG PatientSetPasswordActivity| ", ex.getMessage());
+            Log.e("ERROR", "PatientSetPasswordActivity|" + ex.getMessage());
             Toast.makeText(PatientSetPasswordActivity.this, "ERROR: " + ex.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
@@ -62,13 +62,12 @@ public class PatientSetPasswordActivity extends AppCompatActivity {
                                 intent.putExtra("patientInfo", patient);
                                 startActivity(intent);
                             } else if (patientReferenceInfo.getStatus() == ReferenceStatusEnum.ERROR) {
-                                Log.e("LOG DEBUG PatientSetPasswordActivity| ", patientReferenceInfo.getMessage());
+                                Log.e("ERROR", "PatientSetPasswordActivity|" + patientReferenceInfo.getMessage());
                                 Toast.makeText(PatientSetPasswordActivity.this, "ERROR: " + patientReferenceInfo.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         })
                         .addOnFailureListener(e -> {
-                            Log.e("LOG DEBUG PatientSetPasswordActivity| ", e.getMessage());
-
+                            Log.e("ERROR", "PatientSetPasswordActivity|" + e.getMessage());
                             Toast.makeText(PatientSetPasswordActivity.this, "ERROR: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         });
             }

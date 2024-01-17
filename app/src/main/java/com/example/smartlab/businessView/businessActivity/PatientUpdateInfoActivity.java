@@ -36,7 +36,7 @@ public class PatientUpdateInfoActivity extends AppCompatActivity {
             InitVariable();
             setEventListener();
         } catch (Exception ex) {
-            Log.e("LOG DEBUG PatientUpdateInfoActivity| ", ex.getMessage());
+            Log.e("ERROR", "PatientUpdateInfoActivity|" + ex.getMessage());
             Toast.makeText(PatientUpdateInfoActivity.this, "ERROR: " + ex.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
@@ -95,12 +95,12 @@ public class PatientUpdateInfoActivity extends AppCompatActivity {
                                 intent.putExtra("patientInfo", patientIntent);
                                 startActivity(intent);
                             } else if (patientReferenceInfo.getStatus() == ReferenceStatusEnum.ERROR) {
-                                Log.e("LOG DEBUG PatientUpdateInfoActivity| ", patientReferenceInfo.getMessage());
+                                Log.e("ERROR", "PatientUpdateInfoActivity|" + patientReferenceInfo.getMessage());
                                 Toast.makeText(PatientUpdateInfoActivity.this, "ERROR: " + patientReferenceInfo.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         })
                         .addOnFailureListener(e -> {
-                            Log.e("LOG DEBUG PatientUpdateInfoActivity| ", e.getMessage());
+                            Log.e("ERROR", "PatientUpdateInfoActivity| " + e.getMessage());
 
                             Toast.makeText(PatientUpdateInfoActivity.this, "ERROR: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         });

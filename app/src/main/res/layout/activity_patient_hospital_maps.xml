@@ -5,36 +5,312 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="10dp"
     android:background="@color/White"
     tools:context=".businessView.businessActivity.PatientHospitalMapsActivity">
 
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_head"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/BlueHover"
+            android:contentDescription="Quay lại"
+            android:elevation="0dp"
+            android:src="@drawable/ico_back"
+            app:elevation="0dp"
+            app:fabCustomSize="35dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/avatar_style"
+            app:tint="@null" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/seachView_searchHospital"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_search_view"
+            android:imeOptions="actionSearch"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/Black"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            app:iconifiedByDefault="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryBackground="@null"
+            app:queryHint="Tìm kiếm bệnh viện"
+            app:submitBackground="@null" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/view_map"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        app:cardCornerRadius="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_head">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/button_getCurrentLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="100dp"
-        android:backgroundTint="#5D5FEF"
-        android:contentDescription="Vị trí của tôi"
-        android:elevation="0dp"
-        android:src="@drawable/ico_current_location"
-        app:elevation="0dp"
-        app:fabCustomSize="40dp"
-        app:layout_constraintBottom_toBottomOf="@+id/map"
-        app:layout_constraintEnd_toEndOf="@+id/map"
-        app:shapeAppearanceOverlay="@style/avatar_style"
-        app:tint="@null" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/White">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/button_getCurrentLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#5D5FEF"
+                android:contentDescription="Vị trí của tôi"
+                android:elevation="0dp"
+                android:src="@drawable/ico_current_location"
+                app:elevation="0dp"
+                app:fabCustomSize="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/avatar_style"
+                app:tint="@null" />
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/layout_bottomSheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bottomSheet"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:background="@drawable/bg_bottom_sheet"
+                    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_tab"
+                        android:layout_width="100dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="#675C5C"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_infoHospital"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingBottom="25dp"
+                        android:visibility="invisible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/card_tab">
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/button_backListHospital"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/BlueHover"
+                            android:contentDescription="Quay lại"
+                            android:elevation="0dp"
+                            android:src="@drawable/ico_back"
+                            app:elevation="0dp"
+                            app:fabCustomSize="40dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:shapeAppearanceOverlay="@style/avatar_style"
+                            app:tint="@null" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/font_family_mitr_regular"
+                            android:text="Thông tin chi tiết"
+                            android:textColor="@color/Black"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/button_backListHospital"
+                            app:layout_constraintStart_toEndOf="@+id/button_backListHospital"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img_hospital"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            app:cardCornerRadius="18dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/button_backListHospital">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:background="@drawable/lab" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/txt_hospitalNameInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/font_family_mitr_regular"
+                            android:text="Văn phòng La Mai"
+                            android:textColor="@color/Black"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/img_hospital" />
+
+                        <TextView
+                            android:id="@+id/txt_headHospitalAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/font_family_mitr_light"
+                            android:text="Địa chỉ: "
+                            android:textColor="@color/Black"
+                            android:textSize="10sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_hospitalNameInfo" />
+
+                        <TextView
+                            android:id="@+id/txt_hospitalAddressInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/font_family_mitr_light"
+                            android:text="Địa chỉ:"
+                            android:textColor="@color/Black"
+                            android:textSize="10sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/txt_headHospitalAddress"
+                            app:layout_constraintTop_toTopOf="@+id/txt_headHospitalAddress" />
+
+                        <TextView
+                            android:id="@+id/txt_headHospitalHotline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/font_family_mitr_light"
+                            android:text="Hotline: "
+                            android:textColor="@color/Black"
+                            android:textSize="10sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_hospitalAddressInfo" />
+
+                        <TextView
+                            android:id="@+id/txt_hospitalHotlineInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/font_family_mitr_light"
+                            android:text="Hotline:"
+                            android:textColor="@color/Black"
+                            android:textSize="10sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/txt_headHospitalHotline"
+                            app:layout_constraintTop_toTopOf="@+id/txt_headHospitalHotline" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_buttonHospital"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="5dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_hospitalHotlineInfo">
+
+                            <Button
+                                android:id="@+id/button_directionHospital"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="5dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/font_family_mitr_regular"
+                                android:text="Chỉ đường"
+                                android:textColor="@color/White"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/button_contactHospital"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/font_family_mitr_regular"
+                                android:text="Liên hệ"
+                                android:textColor="@color/White"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/button_bookHospital"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/font_family_mitr_regular"
+                                android:text="Đặt lịch"
+                                android:textColor="@color/White"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_listHospitalMap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingBottom="25dp"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/card_tab"
+                        tools:listitem="@layout/item_hospital_fragment_patient_hospital_maps" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

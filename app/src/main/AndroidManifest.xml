@@ -17,7 +17,7 @@
         android:theme="@style/Theme.SmartLab"
         tools:targetApi="31">
         <activity
-            android:name=".patient_book_doctor"
+            android:name=".businessView.businessActivity.PatientBookDoctorActivity"
             android:exported="false" />
 
         <meta-data
@@ -27,11 +27,8 @@
         <activity
             android:name=".businessView.businessActivity.PatientHospitalMapsActivity"
             android:exported="false"
-            android:label="@string/title_activity_patient_hospital_maps">
-
-
-        </activity>
-
+            android:label="@string/title_activity_patient_hospital_maps"
+            android:screenOrientation="unspecified"></activity>
         <activity
             android:name=".businessView.businessActivity.PatientLoginActivity"
             android:exported="false" />
@@ -42,7 +39,7 @@
         <activity
             android:name=".businessView.businessActivity.PatientHomeActivity"
             android:exported="false"
-            android:screenOrientation="unspecified"></activity>
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".businessView.businessActivity.PatientCongratulationsActivity"
             android:exported="false"
@@ -67,12 +64,19 @@
             android:name=".businessView.businessActivity.MainGetStartedActivity"
             android:exported="false"
             android:screenOrientation="unspecified" />
+
+        <activity
+            android:name=".businessView.businessActivity.PatientBookHospitalActivity"
+            android:exported="false"
+            android:screenOrientation="unspecified"></activity>
+
         <activity
             android:name=".businessView.businessActivity.MainStartActivity"
             android:exported="true"
             android:screenOrientation="unspecified">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

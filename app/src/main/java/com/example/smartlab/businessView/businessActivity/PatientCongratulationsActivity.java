@@ -26,7 +26,7 @@ public class PatientCongratulationsActivity extends AppCompatActivity {
             InitVariable();
             setEventListener();
         } catch (Exception ex) {
-            Log.e("LOG DEBUG PatientCongratulationsActivity| ", ex.getMessage());
+            Log.e("ERROR", "PatientCongratulationsActivity|" + ex.getMessage());
             Toast.makeText(PatientCongratulationsActivity.this, "ERROR: " + ex.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }

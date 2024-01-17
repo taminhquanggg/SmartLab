@@ -24,9 +24,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class DoctorService {
     private final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Doctor");
-
     private static DoctorService instance;
-
     public DoctorService() {
 
     }

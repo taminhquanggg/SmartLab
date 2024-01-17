@@ -38,7 +38,7 @@ public class PatientHomeActivity extends AppCompatActivity {
             InitVariable();
             setEventListener();
         } catch (Exception ex) {
-            Log.e("LOG DEBUG PatientHomeActivity| ", ex.getMessage());
+            Log.e("ERROR", "PatientHomeActivity|" + ex.getMessage());
             Toast.makeText(PatientHomeActivity.this, "ERROR: " + ex.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }

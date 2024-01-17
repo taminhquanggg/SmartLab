@@ -30,7 +30,7 @@ public class PatientLoginActivity extends AppCompatActivity {
             InitVariable();
             setEventListener();
         } catch (Exception ex) {
-            Log.e("LOG DEBUG PatientLoginActivity| ", ex.getMessage());
+            Log.e("ERROR", "PatientLoginActivity|" + ex.getMessage());
             Toast.makeText(PatientLoginActivity.this, "ERROR: " + ex.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }

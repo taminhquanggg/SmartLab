@@ -96,7 +96,8 @@
                         android:fontFamily="@font/mitr_light"
                         android:hint="Nhập họ và tên"
                         android:paddingStart="10dp"
-                        android:textColor="@color/Black" />
+                        android:textColor="@color/Black"
+                        android:textColorHint="#555555" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -124,7 +125,8 @@
                         android:fontFamily="@font/mitr_light"
                         android:hint="Nhập ngày sinh"
                         android:paddingStart="10dp"
-                        android:textColor="@color/Black" />
+                        android:textColor="@color/Black"
+                        android:textColorHint="#555555" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -202,7 +204,8 @@
                         android:fontFamily="@font/mitr_light"
                         android:hint="Nhập địa chỉ"
                         android:paddingStart="10dp"
-                        android:textColor="@color/Black" />
+                        android:textColor="@color/Black"
+                        android:textColorHint="#555555" />
                 </RelativeLayout>
 
             </RelativeLayout>

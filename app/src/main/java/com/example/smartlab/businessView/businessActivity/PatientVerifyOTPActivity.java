@@ -53,7 +53,7 @@ public class PatientVerifyOTPActivity extends AppCompatActivity {
             setEventInputOtp();
             setEventListener();
         } catch (Exception ex) {
-            Log.e("LOG DEBUG PatientVerifyOTPActivity| ", ex.getMessage());
+            Log.e("ERROR", "PatientVerifyOTPActivity|" + ex.getMessage());
             Toast.makeText(PatientVerifyOTPActivity.this, "ERROR: " + ex.getMessage(), Toast.LENGTH_SHORT).show();
         }
 

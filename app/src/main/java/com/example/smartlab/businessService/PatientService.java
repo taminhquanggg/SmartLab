@@ -1,26 +1,18 @@
 package com.example.smartlab.businessService;
 
-import androidx.annotation.NonNull;
-
 import com.example.smartlab.businessObject.Patient;
 import com.example.smartlab.businessObject.ReferenceInfo;
 import com.example.smartlab.businessObject.ReferenceStatusEnum;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class PatientService {
     private final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Patient");
     private static PatientService instance;
+
 
     public PatientService() {
 
@@ -60,7 +52,7 @@ public class PatientService {
 
     public Task<ReferenceInfo<Patient>> Update(String patientID, Patient updatedInfo) {
 
-        if (updatedInfo.getPatientID() == null || updatedInfo.getPatientID().isEmpty()) {
+        if (patientID == null || patientID.isEmpty()) {
             return Tasks.forResult(new ReferenceInfo<>(
                     ReferenceStatusEnum.ERROR,
                     updatedInfo,
