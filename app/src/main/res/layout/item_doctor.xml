@@ -85,7 +85,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/font_family_mitr_light"
-                            android:text="Huyết học"
+                            android:text="Huyết học , chuyên lao bệnh phổi "
                             android:textColor="@color/BlueHover"
 
                             android:textSize="14sp"
