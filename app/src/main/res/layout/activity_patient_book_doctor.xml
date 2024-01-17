@@ -4,62 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/White"
+    android:paddingHorizontal="10dp"
     tools:context=".businessView.businessActivity.PatientBookDoctorActivity">
-    <RelativeLayout
-        android:id="@+id/relative_search_doctor"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-
+        android:layout_marginVertical="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <SearchView
-            android:id="@+id/seachView_searchDoctor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="9dp"
-            android:background=""
-            android:iconifiedByDefault="false"
-            android:imeOptions="actionSearch"
-            android:queryHint="Tìm kiếm bác sĩ"
-            android:textColorHint="@color/Black"
-            app:iconifiedByDefault="false"
-            app:queryBackground="@null"
-            app:submitBackground="@null"
-
-            />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:backgroundTint="@color/BlueHover"
+            android:contentDescription="Quay về"
             android:elevation="0dp"
             android:src="@drawable/ico_back"
             app:elevation="0dp"
+            app:fabCustomSize="35dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@null" />
-        <TextView
-            android:id="@+id/text_doctor_profile"
-            android:text="Bác sĩ chuyên khoa"
-            android:layout_below="@+id/button_back"
-            android:layout_width="match_parent"
+
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/seachView_searchDoctor"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:gravity="left"
-            android:fontFamily="@font/mitr_medium"
-            android:layout_marginTop="5dp"
-            />
-    <androidx.recyclerview.widget.RecyclerView
+            android:background="@drawable/bg_search_view"
+            android:iconifiedByDefault="false"
+            android:imeOptions="actionSearch"
+            android:textColorHint="@color/Black"
+            app:iconifiedByDefault="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryBackground="@null"
+            app:queryHint="Tìm kiếm bác sĩ"
+            app:submitBackground="@null" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/text_doctor_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text_doctor_profile"
-        tools:listitem="@layout/item_doctor"
-        />
+        android:layout_marginVertical="10dp"
+        android:fontFamily="@font/mitr_medium"
+        android:gravity="left"
+        android:text="Bác sĩ chuyên khoa"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_head" />
 
-    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/text_doctor_profile"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_doctor_profile"
+        tools:listitem="@layout/item_doctor" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
