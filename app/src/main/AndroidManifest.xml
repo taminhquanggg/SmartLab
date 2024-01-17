@@ -16,12 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartLab"
         tools:targetApi="31">
-        <activity
-            android:name=".businessView.businessActivity.PatientMedicineCartActivity"
-            android:exported="false" />
-        <activity
-            android:name=".businessView.businessActivity.PatientMedicineDetailActivity"
-            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
