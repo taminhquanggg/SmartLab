@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".businessView.businessActivity.PatientMedicineDetailActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/textView_header"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/font_family_mitr_medium"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            android:text="Giỏ hàng"
+            android:textColor="@color/BlueHover"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/BlueHover"
+            android:contentDescription="Giỏ hàng"
+            android:elevation="0dp"
+            android:src="@drawable/ico_card"
+            app:elevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@null" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/paradol"
+            android:layout_below="@+id/constraint_header"
+            android:id="@+id/img_paradol"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paradol"
+            android:layout_below="@+id/img_paradol"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/TextView_paradol"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 Viên"
+            android:layout_below="@+id/TextView_paradol"
+            android:layout_marginStart="13dp"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/textView_soluong"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:layout_below="@+id/textView_soluong"
+            android:textSize="20dp"
+            android:id="@+id/textView_soSanPham"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20.000 VND"
+            android:layout_below="@+id/textView_soluong"
+            android:layout_marginStart="300dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Miêu Tả "
+            android:layout_below="@+id/textView_soSanPham"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/textView_mieuTa"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Panadol là một loại thuốc giảm đau có chứa thành phần chính paracetamol (acetaminophen) – hoạt chất được sử dụng để làm giảm đau và hạ sốt."
+            android:layout_below="@+id/textView_mieuTa"
+            android:textSize="20dp"
+            android:layout_margin="10dp"
+            android:id="@+id/textView_mieuTaThuoc"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textView_mieuTaThuoc"
+            android:layout_marginTop="70dp"
+            >
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/button_card2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/BlueHover"
+                android:contentDescription="Giỏ hàng"
+                android:elevation="0dp"
+                android:src="@drawable/ico_card"
+                app:elevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@null"
+                android:layout_marginStart="10dp"/>
+            <Button
+                android:layout_width="500dp"
+                android:layout_height="60dp"
+                android:text="Buy Now"
+                android:textSize="20dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="10dp"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_paradol"
+        android:layout_width="140dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/paradol" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paradol"
+        android:layout_toRightOf="@+id/img_paradol"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginStart="30dp"
+        android:id="@+id/TextView_paradol"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12 viên"
+        android:layout_below="@+id/TextView_paradol"
+        android:layout_toRightOf="@+id/img_paradol"
+        android:layout_marginStart="30dp"
+        android:id="@+id/textView_soluong"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*SoluongMua"
+        android:layout_below="@+id/textView_soluong"
+        android:layout_toRightOf="@+id/img_paradol"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView_soluongmua"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20 000 VND"
+        android:layout_toRightOf="@+id/textView_soluongmua"
+        android:layout_below="@+id/textView_soluong"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:textStyle="bold"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/TextView_paradol"
+        android:layout_marginStart="80dp"
+        android:src="@drawable/ico_trash"
+        app:fabCustomSize="40dp" />
+</RelativeLayout>

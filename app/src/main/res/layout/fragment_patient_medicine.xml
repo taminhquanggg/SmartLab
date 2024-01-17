@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -154,94 +154,39 @@
                     android:fontFamily="@font/font_family_mitr_regular"
                     android:text="Sản phẩm"
                     android:textColor="@color/Black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold"
 
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    tools:listitem="@layout/item_medicine"
                     android:layout_below="@+id/textView_itemTitle"
-                    android:layout_marginVertical="10dp"
-                    android:scrollbars="none">
+                    android:id="@+id/recycler_view"
 
-                    <com.nex3z.togglebuttongroup.SingleSelectToggleGroup
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <com.nex3z.togglebuttongroup.button.LabelToggle
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="5dp"
-                            android:elevation="4dp"
-                            android:text="Tất cả"
-                            android:textSize="12sp"
-                            app:tbgMarkerColor="@color/P_Blue" />
-
-                        <com.nex3z.togglebuttongroup.button.LabelToggle
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:text="Mẹ và Bé"
-                            android:textSize="12sp"
-                            app:tbgMarkerColor="@color/P_Blue" />
-
-                        <com.nex3z.togglebuttongroup.button.LabelToggle
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:text="Chăm sóc cá nhân"
-                            android:textSize="12sp"
-                            app:tbgMarkerColor="@color/P_Blue" />
-
-                        <com.nex3z.togglebuttongroup.button.LabelToggle
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:text="Vật tư y tế"
-                            android:textSize="12sp"
-                            app:tbgMarkerColor="@color/P_Blue" />
-
-                        <com.nex3z.togglebuttongroup.button.LabelToggle
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:text="Thuốc kê đơn"
-                            android:textSize="12sp"
-                            app:tbgMarkerColor="@color/P_Blue" />
-
-                        <com.nex3z.togglebuttongroup.button.LabelToggle
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:text="Thực phẩm chức năng"
-                            android:textSize="12sp"
-                            app:tbgMarkerColor="@color/P_Blue" />
-
-                        <com.nex3z.togglebuttongroup.button.LabelToggle
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:text="Sức khỏe giới tính"
-                            android:textSize="12sp"
-                            app:tbgMarkerColor="@color/P_Blue" />
-
-                        <com.nex3z.togglebuttongroup.button.LabelToggle
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:text="Thuốc không kê đơn"
-                            android:textSize="12sp"
-                            app:tbgMarkerColor="@color/P_Blue" />
-
-                    </com.nex3z.togglebuttongroup.SingleSelectToggleGroup>
-
-                </HorizontalScrollView>
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView_Sale"
+                        android:fontFamily="@font/font_family_mitr_regular"
+                        android:text="Sản phẩm giảm giá"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_below="@+id/recycler_view"
+                        />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/textView_Sale"
+                    tools:listitem="@layout/item_medicine_sale"/>
 
             </RelativeLayout>
 
-
         </ScrollView>
 
-
     </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
