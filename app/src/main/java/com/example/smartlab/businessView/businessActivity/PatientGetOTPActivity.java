@@ -117,6 +117,7 @@ public class PatientGetOTPActivity extends AppCompatActivity {
                                     Intent intent = new Intent(getApplicationContext(), PatientLoginActivity.class);
                                     intent.putExtra("patientInfo", patientInfo);
                                     startActivity(intent);
+                                    finish();
                                 } else {
                                     handleOnGetOTP();
                                 }

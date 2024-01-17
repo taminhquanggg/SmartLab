@@ -62,25 +62,35 @@ public class PatientHomeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
+
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("patientInfo", patientIntent);
+
                 if (id == R.id.bottom_nav_home) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, homeFragment).commit();
                     getSupportFragmentManager().executePendingTransactions();
+
+                    homeFragment.setArguments(bundle);
 
                     return true;
                 } else if (id == R.id.bottom_nav_calendar) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, scheduleFragment).commit();
 
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("patientInfo", patientIntent);
                     scheduleFragment.setArguments(bundle);
 
                     return true;
                 } else if (id == R.id.bottom_nav_medicine) {
+
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, medicineFragment).commit();
+
+                    medicineFragment.setArguments(bundle);
 
                     return true;
                 } else if (id == R.id.bottom_nav_profile) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, profileFragment).commit();
+
+                    profileFragment.setArguments(bundle);
+
                     return true;
                 }
 

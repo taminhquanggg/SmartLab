@@ -41,6 +41,7 @@ public class PatientCongratulationsActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), PatientHomeActivity.class);
             intent.putExtra("patientInfo", patient);
             startActivity(intent);
+            finish();
         });
     }
 }

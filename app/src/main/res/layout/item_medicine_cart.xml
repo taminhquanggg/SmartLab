@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@drawable/bg_item_hospital_map">
 
     <ImageView
         android:id="@+id/img_paradol"
@@ -10,51 +11,37 @@
         android:layout_height="100dp"
         android:layout_marginStart="15dp"
         android:src="@drawable/paradol" />
+
     <TextView
+        android:id="@+id/TextView_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@+id/img_paradol"
+        android:fontFamily="@font/font_family_mitr_regular"
         android:text="Paradol"
-        android:layout_toRightOf="@+id/img_paradol"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:layout_marginStart="30dp"
-        android:id="@+id/TextView_paradol"
-        />
+        android:textColor="@color/Black"
+        android:textSize="25sp" />
+
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="12 viên"
-        android:layout_below="@+id/TextView_paradol"
-        android:layout_toRightOf="@+id/img_paradol"
-        android:layout_marginStart="30dp"
-        android:id="@+id/textView_soluong"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="*SoluongMua"
-        android:layout_below="@+id/textView_soluong"
-        android:layout_toRightOf="@+id/img_paradol"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:id="@+id/textView_soluongmua"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="20 000 VND"
-        android:layout_toRightOf="@+id/textView_soluongmua"
-        android:layout_below="@+id/textView_soluong"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="60dp"
-        android:textStyle="bold"
         android:id="@+id/TextView_giatien"
-        />
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/TextView_paradol"
-        android:layout_marginStart="80dp"
+        android:layout_below="@+id/TextView_Name"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@+id/img_paradol"
+        android:fontFamily="@font/font_family_mitr_light"
+        android:text="20 000 VND"
+        android:textColor="@color/Black" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/TextView_Name"
         android:src="@drawable/ico_trash"
         app:fabCustomSize="40dp" />
 </RelativeLayout>

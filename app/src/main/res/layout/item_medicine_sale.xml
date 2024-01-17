@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <TextView
-        android:id="@+id/TextView_paradol"
+        android:id="@+id/TextView_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/img_paradol"
@@ -16,7 +16,7 @@
         android:id="@+id/TextView_quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TextView_paradol"
+        android:layout_below="@+id/TextView_Name"
         android:text="20pcs"
         android:textSize="15dp"
 

@@ -54,6 +54,7 @@ public class PatientLoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), PatientHomeActivity.class);
                     intent.putExtra("patientInfo", patient);
                     startActivity(intent);
+                    finish();
                 } else {
                     inputPasswordLogin.setError("Mật khẩu sai, vui lòng nhập lại !");
                     inputPasswordLogin.requestFocus();

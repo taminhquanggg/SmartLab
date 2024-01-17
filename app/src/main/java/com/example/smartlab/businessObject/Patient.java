@@ -16,6 +16,7 @@ public class Patient implements Serializable {
     private String sex;
     private String address;
     private String verificationId;
+
     public Patient() {
 
     }

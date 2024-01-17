@@ -1,50 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_medicine"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:padding="5dp">
 
-        <TextView
-            android:id="@+id/TextView_paradol"
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/P_Blue30"
+        app:cardCornerRadius="18dp">
+
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/img_paradol"
-            android:text="Paradol"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:layout_margin="10dp">
 
-        <TextView
-            android:id="@+id/TextView_quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/TextView_paradol"
-            android:text="20pcs"
-            android:textSize="15dp"
+            <ImageView
+                android:id="@+id/img_paradol"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/paradol" />
 
-            />
+            <TextView
+                android:id="@+id/TextView_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_paradol"
+                android:fontFamily="@font/font_family_mitr_regular"
+                android:text="Paradol"
+                android:textColor="@color/Black"
+                android:textSize="20sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/TextView_quantity"
-            android:layout_marginTop="10dp"
-            android:text="$15.99"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/TextView_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TextView_Name"
+                android:fontFamily="@font/font_family_mitr_light"
+                android:text="20"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
 
-        <ImageView
-            android:id="@+id/img_paradol"
-            android:layout_width="140dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="15dp"
-            android:src="@drawable/paradol" />
+            <TextView
+                android:id="@+id/TextView_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TextView_Name"
+                android:layout_marginStart="5dp"
+                android:layout_toRightOf="@+id/TextView_weight"
+                android:fontFamily="@font/font_family_mitr_light"
+                android:text="viên"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/TextView_quantity"
-            android:layout_marginStart="80dp"
-            android:src="@drawable/ico_add"
-            app:fabCustomSize="40dp" />
+            <TextView
+                android:id="@+id/txt_gia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TextView_weight"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/font_family_mitr_regular"
+                android:text="$15.99"
+                android:textColor="@color/Black"
+                android:textSize="20sp" />
+
+            <Button
+
+                android:id="@+id/button_addToCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_gia"
+                android:src="@drawable/ico_add"
+                android:text="Thêm vào giỏ hàng"
+                android:textColor="@color/White"
+                app:fabCustomSize="40dp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
 
 </RelativeLayout>

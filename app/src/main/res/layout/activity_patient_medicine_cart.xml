@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/White"
+    android:padding="10dp"
     tools:context=".businessView.businessActivity.PatientMedicineCartActivity">
+
     <TextView
         android:id="@+id/textView_header"
         android:layout_width="match_parent"
@@ -19,115 +22,72 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-        />
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_below="@+id/textView_header"
-        tools:listitem="@layout/item_medicine_cart"
-        android:id="@+id/recyclerView_cart"
-        />
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/recyclerView_cart"
-        android:id="@+id/relative_chitiet">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chi tiết thanh toán"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:layout_marginTop="20dp"
-        android:id="@+id/textView_chitiet"
-        android:layout_marginStart="15dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tổng "
-        android:layout_below="@+id/textView_chitiet"
-        android:textSize="20dp"
-        android:layout_marginStart="15dp"
-        android:id="@+id/textView_tong"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="30 000 VND"
-        android:layout_below="@+id/textView_chitiet"
-        android:layout_toRightOf="@+id/textView_tong"
-        android:layout_marginStart="250dp"
-        android:textSize="15dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Thuế "
-        android:layout_below="@+id/textView_tong"
-        android:textSize="20dp"
-        android:layout_marginStart="15dp"
-        android:id="@+id/textView_thue"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="5 000 VND"
-        android:layout_below="@+id/textView_tong"
-        android:layout_toRightOf="@+id/textView_thue"
-        android:layout_marginStart="250dp"
-        android:textSize="15dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tổng cộng "
-        android:layout_below="@+id/textView_thue"
-        android:textSize="20dp"
-        android:layout_marginStart="15dp"
-        android:id="@+id/textView_tongcong"
-        android:textStyle="bold"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="35 000 VND"
-        android:layout_below="@+id/textView_thue"
-        android:layout_toRightOf="@+id/textView_tongcong"
-        android:layout_marginStart="200dp"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        />
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/relative_chitiet"
-        android:layout_marginTop="270dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tổng"
-            android:id="@+id/textView_tonghoadon"
-            android:textSize="20dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="35 000 VND"
-            android:layout_below="@+id/textView_tonghoadon"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="150dp"
-            android:text="Thanh Toán "
-            />
-    </RelativeLayout>
+    />
 
+    <TextView
+        android:id="@+id/txt_none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_header"
+        android:gravity="center"
+        android:text="(Giỏ hàng trống)"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@+id/layout_Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_header"
+        android:visibility="visible">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_cart"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            tools:listitem="@layout/item_medicine_cart" />
+
+        <RelativeLayout
+            android:id="@+id/relative_chitiet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recyclerView_cart"
+            android:layout_marginVertical="10dp">
+
+            <TextView
+                android:id="@+id/textView_tongcong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_family_mitr_regular"
+                android:text="Tổng cộng: "
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_tongTien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@+id/textView_tongcong"
+                android:fontFamily="@font/font_family_mitr_regular"
+                android:gravity="center_vertical"
+                android:text="35 000 VND"
+                android:textColor="@color/Black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative_chitiet"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/font_family_mitr_regular"
+            android:text="Thanh Toán "
+            android:textColor="@color/White"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
 
 
 </RelativeLayout>

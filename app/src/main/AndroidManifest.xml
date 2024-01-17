@@ -29,6 +29,15 @@
             android:name=".businessView.businessActivity.PatientBookDoctorActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".businessView.businessActivity.PatientMedicineDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".businessView.businessActivity.PatientMedicineCartActivity"
+            android:exported="false" />
+
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/my_app_api_key" />

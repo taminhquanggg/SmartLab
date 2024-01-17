@@ -3,15 +3,15 @@ package com.example.smartlab.businessObject;
 import java.io.Serializable;
 
 public class Medicine implements Serializable {
-    private String name ;
-    private String weight ;
-    private String unit ;
-    private int price ;
-    private String description ;
-    private String image ;
-    private String medicineID ;
+    private String name;
+    private String weight;
+    private String unit;
+    private int price;
+    private String description;
+    private String image;
+    private String medicineID;
 
-    public Medicine () {
+    public Medicine() {
     }
 
     public String getName() {

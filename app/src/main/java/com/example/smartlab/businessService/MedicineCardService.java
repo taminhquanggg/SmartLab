@@ -1,7 +1,7 @@
 package com.example.smartlab.businessService;
 
-import com.example.smartlab.businessObject.Medicine;
-import com.example.smartlab.businessObject.PatientCardMedicine;
+import com.example.smartlab.businessObject.BookingHospital;
+import com.example.smartlab.businessObject.MedicineCard;
 import com.example.smartlab.businessObject.ReferenceInfo;
 import com.example.smartlab.businessObject.ReferenceStatusEnum;
 import com.google.android.gms.tasks.Task;
@@ -13,42 +13,45 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 public class MedicineCardService {
-    private final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Medicine");
+    private final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("MedicineCard");
     private static MedicineCardService instance;
+
     public MedicineCardService() {
 
     }
+
     public static synchronized MedicineCardService getInstance() {
         if (instance == null) {
             instance = new MedicineCardService();
         }
         return instance;
     }
-    public Task<ArrayList<PatientCardMedicine>> getMedicineCardList() {
 
-        ArrayList<PatientCardMedicine> medicineCardList = new ArrayList<>();
+    public Task<ArrayList<MedicineCard>> getMedicineCardList(String PatientID) {
 
-        return reference.get().continueWithTask(task -> {
-            if (task.isSuccessful()) {
-                DataSnapshot snapshot = task.getResult();
-                if (snapshot.exists()) {
-                    for (DataSnapshot childSnapshot : snapshot.getChildren()) {
-                        medicineCardList.add(childSnapshot.getValue(PatientCardMedicine.class));
+        ArrayList<MedicineCard> medicineCardList = new ArrayList<>();
+
+        return reference.orderByChild("patientID").equalTo(PatientID)
+                .get().continueWithTask(task -> {
+                    if (task.isSuccessful()) {
+                        DataSnapshot snapshot = task.getResult();
+                        if (snapshot.exists()) {
+                            for (DataSnapshot childSnapshot : snapshot.getChildren()) {
+                                medicineCardList.add(childSnapshot.getValue(MedicineCard.class));
+                            }
+                        }
+
+                        return Tasks.forResult(medicineCardList);
                     }
-                }
-
-                return Tasks.forResult(medicineCardList);
-            }
-            else {
-                return Tasks.forResult(null);
-            }
-        });
+                    return null;
+                });
     }
-    public Task<ReferenceInfo<PatientCardMedicine>> insert (PatientCardMedicine infoInsert ){
+
+    public Task<ReferenceInfo<MedicineCard>> Insert(MedicineCard infoInsert) {
         infoInsert.setMedicineCardID(reference.push().getKey());
-        return  reference.child(infoInsert.getMedicineCardID()).setValue(infoInsert).continueWithTask(task -> {
-            if (task.isSuccessful()){
-                return Tasks.forResult (new ReferenceInfo<>
+        return reference.child(infoInsert.getMedicineCardID()).setValue(infoInsert).continueWithTask(task -> {
+            if (task.isSuccessful()) {
+                return Tasks.forResult(new ReferenceInfo<>
                         (
                                 ReferenceStatusEnum.SUCCESS,
                                 infoInsert,
@@ -58,11 +61,22 @@ public class MedicineCardService {
                 return Tasks.forResult(new ReferenceInfo<>
                         (
                                 ReferenceStatusEnum.ERROR,
-                                null   ,
+                                null,
                                 task.getException().getMessage()
                         ));
             }
         });
+    }
+
+    public Task<Boolean> Delete(String medicineCardID) {
+        return reference.child(medicineCardID).removeValue()
+                .continueWithTask(task -> {
+                    if (task.isSuccessful()) {
+                        return Tasks.forResult(true);
+                    } else {
+                        return Tasks.forResult(false);
+                    }
+                });
     }
 
 }

@@ -8,19 +8,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smartlab.R;
-import com.example.smartlab.businessObject.Medicine;
-import com.example.smartlab.businessObject.PatientCardMedicine;
+import com.example.smartlab.businessObject.MedicineCard;
+import com.example.smartlab.businessService.MedicineCardService;
 import com.example.smartlab.businessView.businessActivity.PatientMedicineCartActivity;
-import com.example.smartlab.databinding.ItemMedicineBinding;
 import com.example.smartlab.databinding.ItemMedicineCartBinding;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
 
 public class MedicineCardAdapter extends RecyclerView.Adapter<MedicineCardAdapter.MedicineCardViewHolder> {
-        private final PatientMedicineCartActivity mainActivity ;
-        private final ArrayList<PatientCardMedicine> collection ;
+    private final PatientMedicineCartActivity mainActivity;
+    private final ArrayList<MedicineCard> collection;
 
-    public MedicineCardAdapter(PatientMedicineCartActivity mainActivity, ArrayList<PatientCardMedicine> collection) {
+    public MedicineCardAdapter(PatientMedicineCartActivity mainActivity, ArrayList<MedicineCard> collection) {
         this.mainActivity = mainActivity;
         this.collection = collection;
     }
@@ -36,13 +36,21 @@ public class MedicineCardAdapter extends RecyclerView.Adapter<MedicineCardAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MedicineCardViewHolder holder, int position) {
-        PatientCardMedicine item = collection.get(position);
-        if (item != null){
-            holder.binding.TextViewParadol.setText(item.getName());
-            holder.binding.textViewSoluong.setText(Integer.toString(item.getSoluong()));
-            holder.binding.textViewSoluongmua.setText(Integer.toString(item.getSoluongMua()));
-            holder.binding.TextViewGiatien.setText(Integer.toString(item.getGia()));
+        MedicineCard item = collection.get(position);
+        if (item != null) {
+            holder.binding.TextViewName.setText(item.getMedicineName());
+            holder.binding.TextViewGiatien.setText(Integer.toString(item.getPrice()));
 
+            holder.binding.buttonDelete.setOnClickListener(v -> {
+                MedicineCardService.getInstance().Delete(item.getMedicineCardID()).addOnSuccessListener(new OnSuccessListener<Boolean>() {
+                    @Override
+                    public void onSuccess(Boolean aBoolean) {
+                        if (aBoolean) {
+                            mainActivity.bindingListCard();
+                        }
+                    }
+                });
+            });
         }
     }
 
