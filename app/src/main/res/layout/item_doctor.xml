@@ -43,8 +43,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/font_family_mitr_regular"
                     android:text="Trung tá Đăng"
+                    android:textColor="@color/Black"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/image_doctor"
@@ -93,31 +95,6 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txt_hospital" />
 
-                        <TextView
-                            android:id="@+id/txt_number"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/font_family_mitr_light"
-                            android:text="900 lượt thăm khám"
-                            android:textColor="@color/BlueHover"
-
-                            android:textSize="14sp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/txt_department" />
-
-
-                        <TextView
-                            android:id="@+id/txt_exp"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/font_family_mitr_light"
-                            android:text="Kinh nghiệm: 1 năm"
-                            android:textColor="@color/BlueHover"
-                            android:textSize="14sp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/txt_number" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
@@ -136,6 +113,7 @@
         app:layout_constraintTop_toBottomOf="@+id/card_doctor">
 
         <Button
+            android:id="@+id/button_viewProfile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -148,6 +126,7 @@
             app:strokeWidth="0.5dp" />
 
         <Button
+            android:id="@+id/button_booking"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"

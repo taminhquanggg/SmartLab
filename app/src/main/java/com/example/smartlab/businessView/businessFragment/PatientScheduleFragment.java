@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.smartlab.R;
 import com.example.smartlab.businessObject.Patient;
 import com.example.smartlab.businessView.businessActivity.PatientHospitalMapsActivity;
+import com.example.smartlab.businessView.businessActivity.PatientScheduleDoctorActivity;
 import com.example.smartlab.businessView.businessActivity.PatientScheduleHospitalActivity;
 import com.example.smartlab.databinding.FragmentPatientScheduleBinding;
 
@@ -49,6 +50,12 @@ public class PatientScheduleFragment extends Fragment {
     private void setEventListener() {
         buttonScheduleHospital.setOnClickListener(v -> {
             Intent intent = new Intent(this.getContext(), PatientScheduleHospitalActivity.class);
+            intent.putExtra("patientInfo", patientInfo);
+            startActivity(intent);
+        });
+
+        buttonScheduleDoctor.setOnClickListener(v -> {
+            Intent intent = new Intent(this.getContext(), PatientScheduleDoctorActivity.class);
             intent.putExtra("patientInfo", patientInfo);
             startActivity(intent);
         });

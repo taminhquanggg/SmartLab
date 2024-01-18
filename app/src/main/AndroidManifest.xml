@@ -17,6 +17,9 @@
         android:theme="@style/Theme.SmartLab"
         tools:targetApi="31">
         <activity
+            android:name=".businessView.businessActivity.PatientScheduleDoctorActivity"
+            android:exported="false" />
+        <activity
             android:name=".businessView.businessActivity.PatientScheduleHospitalDetailActivity"
             android:exported="false" />
         <activity
@@ -28,15 +31,21 @@
         <activity
             android:name=".businessView.businessActivity.PatientBookDoctorActivity"
             android:exported="false" />
-
         <activity
             android:name=".businessView.businessActivity.PatientMedicineDetailActivity"
             android:exported="false" />
-
         <activity
             android:name=".businessView.businessActivity.PatientMedicineCartActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".businessView.businessActivity.PatientBookDoctorDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".businessView.businessActivity.PatientBookDoctorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".businessView.businessActivity.PatientViewDoctorDetailActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

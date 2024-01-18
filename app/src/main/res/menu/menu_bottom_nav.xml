@@ -14,8 +14,4 @@
         android:id="@+id/bottom_nav_medicine"
         android:icon="@drawable/ico_medicine"
         android:title="Mua thuốc" />
-    <item
-        android:id="@+id/bottom_nav_profile"
-        android:icon="@drawable/ico_user"
-        android:title="Tài khoản" />
 </menu>

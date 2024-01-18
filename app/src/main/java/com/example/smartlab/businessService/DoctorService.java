@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.example.smartlab.businessObject.Doctor;
+import com.example.smartlab.businessObject.Hospital;
 import com.example.smartlab.businessObject.Patient;
 import com.example.smartlab.businessObject.ReferenceInfo;
 import com.example.smartlab.businessObject.ReferenceStatusEnum;
@@ -25,6 +26,7 @@ import java.util.concurrent.CompletableFuture;
 public class DoctorService {
     private final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Doctor");
     private static DoctorService instance;
+
     public DoctorService() {
 
     }
@@ -50,12 +52,12 @@ public class DoctorService {
                 }
 
                 return Tasks.forResult(doctorList);
-            }
-            else {
+            } else {
                 return Tasks.forResult(null);
             }
         });
     }
+
     public Task<ReferenceInfo<Doctor>> Insert(Doctor infoInsert) {
 
         infoInsert.setDoctorID(reference.push().getKey());
@@ -77,6 +79,22 @@ public class DoctorService {
                                         task.getException().getMessage()
                                 ));
                     }
+                });
+    }
+
+    public Task<Doctor> getDoctorInfo(String doctorID) {
+        return reference.orderByChild("doctorID").equalTo(doctorID)
+                .get().continueWithTask(task -> {
+                    if (task.isSuccessful()) {
+                        DataSnapshot snapshot = task.getResult();
+
+                        if (snapshot.exists()) {
+                            for (DataSnapshot childSnapshot : snapshot.getChildren()) {
+                                return Tasks.forResult(childSnapshot.getValue(Doctor.class));
+                            }
+                        }
+                    }
+                    return null;
                 });
     }
 }

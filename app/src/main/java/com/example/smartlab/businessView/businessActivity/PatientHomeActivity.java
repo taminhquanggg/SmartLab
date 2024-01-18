@@ -23,9 +23,7 @@ public class PatientHomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNav;
     PatientHomeFragment homeFragment = new PatientHomeFragment();
     PatientScheduleFragment scheduleFragment = new PatientScheduleFragment();
-    PatientServiceFragment serviceFragment = new PatientServiceFragment();
     PatientMedicineFragment medicineFragment = new PatientMedicineFragment();
-    PatientProfileFragment profileFragment = new PatientProfileFragment();
     Patient patientIntent;
 
     @Override
@@ -84,12 +82,6 @@ public class PatientHomeActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, medicineFragment).commit();
 
                     medicineFragment.setArguments(bundle);
-
-                    return true;
-                } else if (id == R.id.bottom_nav_profile) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, profileFragment).commit();
-
-                    profileFragment.setArguments(bundle);
 
                     return true;
                 }

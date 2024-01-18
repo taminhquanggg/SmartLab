@@ -1,47 +1,64 @@
 package com.example.smartlab.businessView.businessActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.example.smartlab.R;
+import com.example.smartlab.businessAdapter.DoctorAdapter;
 import com.example.smartlab.businessAdapter.HospitalMapAdapter;
+import com.example.smartlab.businessObject.Doctor;
 import com.example.smartlab.businessObject.Hospital;
+import com.example.smartlab.businessObject.Patient;
+import com.example.smartlab.businessService.DoctorService;
 import com.example.smartlab.businessService.HospitalService;
+import com.example.smartlab.databinding.ActivityPatientBookDoctorBinding;
+import com.example.smartlab.databinding.ActivityPatientHospitalMapsBinding;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class PatientBookDoctorActivity extends AppCompatActivity {
 
-    @Overridev
+    Patient patientIntent;
+
+
+    ActivityPatientBookDoctorBinding binding;
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_book_doctor);
-    }
-    public void ShowDoctorBook() {
-        HospitalService.getInstance().getHospitalList().addOnSuccessListener(hospitalArrayList -> {
-            if (hospitalArrayList.size() > 0) {
-                for (Hospital hospital : hospitalArrayList) {
-                    LatLng hospitalLatLng = new LatLng(hospital.getLatitude(), hospital.getLongitude());
-                    Marker makerHospital = myMap.addMarker(new MarkerOptions()
-                            .position(hospitalLatLng)
-                            .title(hospital.getHospitalName()));
-                    if (makerHospital != null) {
-                        makerHospital.setTag(hospital);
-                    }
-                }
 
-                HospitalMapAdapter hospitalMapAdapter = new HospitalMapAdapter(this, hospitalArrayList);
-                binding.rvListHospitalMap.setAdapter(hospitalMapAdapter);
+        patientIntent = (Patient) getIntent().getSerializableExtra("patientInfo");
 
-                this.hospitalArrayList = hospitalArrayList;
+        binding = ActivityPatientBookDoctorBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        binding.rvListDoctor.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+        DoctorService.getInstance().getDoctorList().addOnSuccessListener(doctorArrayList -> {
+            if (doctorArrayList.size() > 0) {
+                DoctorAdapter doctorAdapter = new DoctorAdapter(this, doctorArrayList);
+                binding.rvListDoctor.setAdapter(doctorAdapter);
             }
-        }).addOnFailureListener(e -> {
-            Log.e("ERROR", "ShowHospitalLocation|" + e.getMessage());
-            Toast.makeText(this, "ERROR: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         });
+
+
+        binding.buttonBack.setOnClickListener(v -> {
+            finish();
+        });
+    }
+
+    public void handlerViewDetailDoctor(Doctor doctor) {
+        Intent intent = new Intent(this, PatientViewDoctorDetailActivity.class);
+        intent.putExtra("patientInfo", patientIntent);
+        intent.putExtra("doctorInfo", doctor);
+
+        startActivity(intent);
     }
 }

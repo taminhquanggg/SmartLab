@@ -17,17 +17,20 @@ import android.widget.Toast;
 
 import com.example.smartlab.R;
 import com.example.smartlab.businessAdapter.DoctorHomeAdapter;
+import com.example.smartlab.businessObject.Doctor;
 import com.example.smartlab.businessObject.Patient;
 import com.example.smartlab.businessService.DoctorService;
+import com.example.smartlab.businessView.businessActivity.PatientBookDoctorActivity;
 import com.example.smartlab.businessView.businessActivity.PatientCongratulationsActivity;
 import com.example.smartlab.businessView.businessActivity.PatientHospitalMapsActivity;
+import com.example.smartlab.businessView.businessActivity.PatientViewDoctorDetailActivity;
 import com.example.smartlab.databinding.FragmentPatientHomeBinding;
 
 public class PatientHomeFragment extends Fragment {
     TextView txtHome_PatientName;
     Patient patientInfo;
     RecyclerView recyclerViewDoctor;
-    Button buttonBookHospitalHome;
+    Button buttonBookHospitalHome, buttonBookDoctor, buttonViewMoreDoctor;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,6 +52,10 @@ public class PatientHomeFragment extends Fragment {
         txtHome_PatientName = FragmentPatientHomeBinding.bind(view).txtPatientName;
 
         buttonBookHospitalHome = FragmentPatientHomeBinding.bind(view).buttonBookHospitalHome;
+
+        buttonBookDoctor = FragmentPatientHomeBinding.bind(view).buttonBookingDoctor;
+
+        buttonViewMoreDoctor = FragmentPatientHomeBinding.bind(view).buttonViewMoreDoctor;
 
         patientInfo = (Patient) getArguments().getSerializable("patientInfo");
 
@@ -79,5 +86,25 @@ public class PatientHomeFragment extends Fragment {
             intent.putExtra("patientInfo", patientInfo);
             startActivity(intent);
         });
+
+        buttonBookDoctor.setOnClickListener(v -> {
+            Intent intent = new Intent(this.getContext(), PatientBookDoctorActivity.class);
+            intent.putExtra("patientInfo", patientInfo);
+            startActivity(intent);
+        });
+
+        buttonViewMoreDoctor.setOnClickListener(v -> {
+            Intent intent = new Intent(this.getContext(), PatientBookDoctorActivity.class);
+            intent.putExtra("patientInfo", patientInfo);
+            startActivity(intent);
+        });
+    }
+
+    public void handlerViewDetailDoctor(Doctor doctor) {
+        Intent intent = new Intent(this.getContext(), PatientViewDoctorDetailActivity.class);
+        intent.putExtra("patientInfo", patientInfo);
+        intent.putExtra("doctorInfo", doctor);
+
+        startActivity(intent);
     }
 }

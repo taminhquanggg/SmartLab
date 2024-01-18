@@ -52,7 +52,7 @@ public class DoctorHomeAdapter extends RecyclerView.Adapter<DoctorHomeAdapter.Do
         }
 
         holder.binding.buttonOrderDoctorTrending.setOnClickListener(v -> {
-
+            mainFragment.handlerViewDetailDoctor(item);
         });
 
     }

@@ -1,7 +1,7 @@
 package com.example.smartlab.businessService;
 
+import com.example.smartlab.businessObject.BookingDoctor;
 import com.example.smartlab.businessObject.BookingHospital;
-import com.example.smartlab.businessObject.Patient;
 import com.example.smartlab.businessObject.ReferenceInfo;
 import com.example.smartlab.businessObject.ReferenceStatusEnum;
 import com.google.android.gms.tasks.Task;
@@ -12,20 +12,19 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class BookingHospitalService {
+public class BookingDoctorService {
+    private final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("BookingDoctor");
 
-    private final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("BookingHospital");
+    private static BookingDoctorService instance;
 
-    private static BookingHospitalService instance;
-
-    public static synchronized BookingHospitalService getInstance() {
+    public static synchronized BookingDoctorService getInstance() {
         if (instance == null) {
-            instance = new BookingHospitalService();
+            instance = new BookingDoctorService();
         }
         return instance;
     }
 
-    public Task<ReferenceInfo<BookingHospital>> Insert(BookingHospital infoInsert) {
+    public Task<ReferenceInfo<BookingDoctor>> Insert(BookingDoctor infoInsert) {
 
         infoInsert.setBookingID(reference.push().getKey());
 
@@ -49,9 +48,9 @@ public class BookingHospitalService {
                 });
     }
 
-    public Task<ArrayList<BookingHospital>> getPatientBookingHospitalList(String patientID) {
+    public Task<ArrayList<BookingDoctor>> getPatientBookingDoctorList(String patientID) {
 
-        ArrayList<BookingHospital> bookingList = new ArrayList<>();
+        ArrayList<BookingDoctor> bookingList = new ArrayList<>();
 
         return reference.orderByChild("patientID").equalTo(patientID)
                 .get().continueWithTask(task -> {
@@ -59,7 +58,7 @@ public class BookingHospitalService {
                         DataSnapshot snapshot = task.getResult();
                         if (snapshot.exists()) {
                             for (DataSnapshot childSnapshot : snapshot.getChildren()) {
-                                bookingList.add(childSnapshot.getValue(BookingHospital.class));
+                                bookingList.add(childSnapshot.getValue(BookingDoctor.class));
                             }
                         }
 
@@ -79,4 +78,7 @@ public class BookingHospitalService {
                     }
                 });
     }
+
+
+
 }
